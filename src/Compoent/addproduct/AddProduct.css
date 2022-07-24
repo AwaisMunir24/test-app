@@ -1,0 +1,59 @@
+.heading-row {
+    padding: 50px;
+}
+
+.addproductsection {
+    background: #F7F7F7;
+}
+
+.head h3 {
+    color: #0E68C8;
+    font-weight: 500;
+    font-size: 35px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input:focus {
+    outline: 0px !important;
+    -webkit-appearance: none;
+    box-shadow: none !important;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 500;
+}
+.input-section{
+    padding-top: 30px;
+}
+.form-submit-button{
+    padding: 50px;
+    text-align: center;
+}
+@media screen and (max-width: 992px) {
+    .heading-row  , .form-submit-button{
+        padding: 30px;
+    } 
+}
+@media screen and (max-width: 768px) {
+    .input-section {
+        padding-top: 0px;
+    }
+}
+@media screen and (max-width: 992px){
+.heading-row, .form-submit-button {
+    padding: 20px;
+}
+.head h3{
+    font-size: 25px;
+}
+}
