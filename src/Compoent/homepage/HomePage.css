@@ -1,6 +1,12 @@
 .homepage {
     padding-bottom: 100px;
 }
+.slider-sli img{
+   border-radius: 0px !important;
+}
+.slider-sli{
+    overflow: hidden;
+}
 
 .discription p{
     font-size: 40px;

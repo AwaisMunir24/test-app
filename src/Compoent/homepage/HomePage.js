@@ -1,12 +1,21 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./HomePage.css";
 import Slider from "react-slick";
 import ContactUs from "./contactus/ContactUs";
-import banner2 from '../../Assestes/photos/banner-sec2.jpg';
+import banner2 from "../../Assestes/photos/banner-sec2.jpg";
 import Testimonials from "./Testimonial/Testimonials";
-
+import Abs_HomeSli from "../../AbstractComponent/Abs_HomeSli/Abs_HomeSli";
 
 const HomePage = () => {
+  const [slider, setSlider] = useState([
+    {
+      img: banner2,
+    },
+    {
+      img: banner2,
+    },
+  ]);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -20,52 +29,18 @@ const HomePage = () => {
         <div className="container-fluid homepage">
           <div className="row">
             <div className="col-lg-12 text-center">
-              <Slider {...settings}>
-                <div className="d-flex text-start justify-content-center align-items-center">
-                  {/* <div className="discription ">
-                    <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, whe
-                    </p>
-                  </div> */}
-
-                  <div className="Image">
-                    <img src={banner2} alt="image" className="img-fluid" />
-                  </div>
-                </div>
-                <div className="d-flex text-start justify-content-center align-items-center">
-                  {/* <div className="discription w-50">
-                    <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, whe
-                    </p>
-                  </div> */}
-
-                  <div className="Image">
-                    <img src={banner2} alt="image" className="img-fluid" />
-                  </div>
-                </div>
-                <div className="d-flex text-start justify-content-center align-items-center">
-                  {/* <div className="discription w-50">
-                    <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, whe
-                    </p>
-                  </div> */}
-
-                  <div className="Image">
-                    <img src={banner2} alt="image" className="img-fluid" />
-                  </div>
-                </div>
-              </Slider>
+              <div className="slider-sli">
+                <Slider {...settings}>
+                  {slider.map((e, idx) => (
+                    <Abs_HomeSli sliderImg={e.img} />
+                  ))}
+                </Slider>
+              </div>
             </div>
           </div>
         </div>
-        <Testimonials/>
-        <ContactUs/>
+        <Testimonials />
+        <ContactUs />
       </section>
     </>
   );

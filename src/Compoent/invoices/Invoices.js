@@ -17,18 +17,39 @@ const Invoices = () => {
 
   const [toogle, setToogle] = useState(true);
   const [tableData, setTableData] = useState(getItems());
-  console.log(tableData, "<==");
+  // console.log(tableData, "<==");
   const _heandleSearcedValue = () => {
     console.log("Hello i m ok function");
     setToogle(!toogle);
   };
   const [search, setSearch] = useState("");
+  const [isSearch, setIsSearch] = useState(false);
+  const [searchResult, setSearchResult] = useState([]);
 
-  const _handleSearchValue = () => {
+  const _handleSearchValue = (e) => {
     setSearch(search);
     setToogle(!toogle);
-    console.log("Value Get Successfully", search);
+
+    return tableData.filter((e) => {
+      const localfilter = e.ProductName.trim();
+      const searchable = search.trim();
+
+      if (localfilter == searchable) {
+        setIsSearch(true);
+        setSearchResult([e]);
+      } else {
+        return "";
+      }
+    });
   };
+
+  function _getData() {
+    if (isSearch) {
+      return searchResult;
+    } else {
+      return tableData;
+    }
+  }
   const _addProduct = () => {
     console.log("Add Product Button in triggred");
   };
@@ -66,11 +87,7 @@ const Invoices = () => {
                       onChange={(e) => setSearch(e.target.value)}
                       placeholder="Enter The Product Name"
                     />
-                    {toogle ? (
-                      <Abs_Button title="Search" events={_handleSearchValue} />
-                    ) : (
-                      <Abs_Button title="Ok" events={_heandleSearcedValue} />
-                    )}
+                    <Abs_Button title="Search" events={_handleSearchValue} />
                   </div>
                   <div className="text-end add-pro">
                     <Link to="/addproduct">
@@ -99,7 +116,9 @@ const Invoices = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {tableData.map((e, idx) => (
+                    {/* { console.log(tableData,'found here') } */}
+
+                    {_getData().map((e, idx) => (
                       <Table_Row
                         key={idx}
                         id={e.id}
@@ -112,7 +131,6 @@ const Invoices = () => {
                             tableData.filter((ele) => ele.id !== e.id)
                           );
                         }}
-                      
                       />
                     ))}
                   </tbody>
