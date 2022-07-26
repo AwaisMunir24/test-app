@@ -4,6 +4,7 @@ import Table_Row from "../../AbstractComponent/tablerow/Table_Row";
 import AddProduct from "../addproduct/AddProduct";
 import { Link } from "react-router-dom";
 import Abs_Heading from "../../AbstractComponent/Abs_Heading/Abs_Heading";
+import Abs_Input from "../../AbstractComponent/Abs_input/Abs_input";
 import "./Invoices.css";
 const Invoices = () => {
   function getItems() {
@@ -94,10 +95,10 @@ const Invoices = () => {
                     <Abs_Button title="Search" events={_handleSearchValue} />
                   </div>
                   <div className="text-end add-pro">
-                    <Link to="/addproduct">
-                      {" "}
-                      <Abs_Button title="Add Product" events={_addProduct} />
-                    </Link>
+                   <Abs_Input 
+                   type="text"
+                   placeholder="Enter the Client Name"
+                   />
                   </div>
                 </div>
               </div>
