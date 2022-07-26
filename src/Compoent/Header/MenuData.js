@@ -35,6 +35,13 @@ export const MenuData = [
       icon:<i className="fa-solid fa-list-check"></i>,
       path: "tasks",
     },
+    {
+      id: 6,
+      name: "Companies",
+      classname: "nav-link",
+      icon:<i class="fa-solid fa-building"></i>,
+      path: "company",
+    },
    
  
   ];

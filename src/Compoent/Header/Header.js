@@ -5,6 +5,9 @@ import Invoices from "../invoices/Invoices";
 import AddClient from "../addClients/Add_Client";
 import AddProduct from "../addproduct/AddProduct";
 import HomePage from "../homepage/HomePage";
+import Sales from "../sales/Sales";
+import Tasks from "../tasks/Tasks";
+import Company from "../company/Company";
 import "./Header.css";
 
 import SidebarMenu from "../MenuSideBar/MenuSidebar";
@@ -88,6 +91,9 @@ const Header = () => {
                 <Route path="addproduct" element={<AddProduct />} />
                 <Route path="addclient" element={<AddClient />} />
                 <Route path="homepage" element={<HomePage />} />
+                <Route path="sales" element={<Sales/>} />
+                <Route path="tasks" element={<Tasks/>} />
+                <Route path="company" element={<Company/>} />
               </Routes>
             </div>
           </div>

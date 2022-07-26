@@ -116,15 +116,17 @@ const Invoices = () => {
           <div className="container">
             <div className="row">
               <div className="col-lg-12 col-md-12 col-sm-12">
-                <table className="table w-100">
+                <table className="table w-100 text-center">
                   <thead>
                     <tr>
                       <th>#</th>
                       <th>Products</th>
-                      <th>Unit Cost</th>
-                      <th>Unit Price</th>
                       <th>Qty</th>
-                      <th></th>
+                      <th>Sale</th>
+                      <th>sales</th>
+                      <th>Discount</th>
+                      <th>Net Amount</th>
+                      
                     </tr>
                   </thead>
                   <tbody>
