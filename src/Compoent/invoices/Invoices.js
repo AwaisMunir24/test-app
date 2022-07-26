@@ -3,6 +3,7 @@ import Abs_Button from "../../AbstractComponent/Abs_Button/Abs_Button";
 import Table_Row from "../../AbstractComponent/tablerow/Table_Row";
 import AddProduct from "../addproduct/AddProduct";
 import { Link } from "react-router-dom";
+import Abs_Heading from "../../AbstractComponent/Abs_Heading/Abs_Heading";
 import "./Invoices.css";
 const Invoices = () => {
   function getItems() {
@@ -17,7 +18,6 @@ const Invoices = () => {
 
   const [toogle, setToogle] = useState(true);
   const [tableData, setTableData] = useState(getItems());
-  // console.log(tableData, "<==");
   const _heandleSearcedValue = () => {
     console.log("Hello i m ok function");
     setToogle(!toogle);
@@ -76,10 +76,14 @@ const Invoices = () => {
           <div className="container">
             <div className="row">
               <div className="col-lg-12 col-md-12 col-sm-12">
-                <div className="button-n-secName d-flex justify-content-between align-items-center">
-                  <h2>Products</h2>
+                <div className="button-n-secName d-flex justify-content-center align-items-center mb-4 pt-4">
+                  <Abs_Heading heading="Invoices" />
                 </div>
-                <div className="search-bar d-flex justify-content-between">
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-lg-12 ">
+                <div className="search-bar d-flex justify-content-between mt-5 mb-2">
                   <div className="input-sec d-flex ">
                     <input
                       type="text"
@@ -95,6 +99,14 @@ const Invoices = () => {
                       <Abs_Button title="Add Product" events={_addProduct} />
                     </Link>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col-lg-3">
+                <div className="d-flex flex-column">
+                  <label>Invoice Date:</label>
+                  <input type="date" />
                 </div>
               </div>
             </div>
@@ -116,8 +128,6 @@ const Invoices = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {/* { console.log(tableData,'found here') } */}
-
                     {_getData().map((e, idx) => (
                       <Table_Row
                         key={idx}

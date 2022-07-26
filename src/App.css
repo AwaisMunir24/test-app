@@ -1,3 +1,24 @@
-main{
+.main-container {
+  
+    padding-top: 25px;
+        overflow: hidden;
+        width: 100%;
 
+}
+.topspace-90 {
+    min-height: 100vh;
+}
+.sidebar-toggle.sssss {
+    left: 12px;
+    position: fixed;
+    top: 25px;
+    z-index: 100000000000000000000;
+}
+.logo-img{
+    width: 200px;
+    height: 60px;
+}
+section{
+    height: 100vh;
+    padding-top: 28px;
 }

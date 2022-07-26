@@ -3,6 +3,7 @@ import "./Add_Client.css";
 import Abs_Input from "../../AbstractComponent/Abs_input/Abs_input";
 import Abs_Button from "../../AbstractComponent/Abs_Button/Abs_Button";
 import { Link } from "react-router-dom";
+import Abs_Heading from "../../AbstractComponent/Abs_Heading/Abs_Heading";
 const AddClient = () => {
 function getUsers () {
     const users=localStorage.getItem('userData');
@@ -45,8 +46,11 @@ function getUsers () {
       <section className="addproductsection">
         <div className="container">
           <div className="row heading-row">
-            <div className="col-lg-12 head">
-              <h3 className="text-center">Add Clients</h3>
+            <div className="col-lg-12 head text-center">
+              <Abs_Heading
+              heading="Add Client"
+              />
+            
             </div>
           </div>
           <form>

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Login.css";
 import lubioil from "../../Assestes/photos/lubioil.png";
-import logo from '../../Assestes/photos/lubi.jpg'
+import logo from "../../Assestes/photos/lubi.jpg";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -13,18 +14,29 @@ const Login = () => {
               <img src={lubioil} alt="image" className="img-fluid" />
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-center flex-column mb-4">
-               <div className="d-flex form-log align-items-center">
+              <div className="d-flex form-log align-items-center">
                 <img src={logo} />
                 <h2>Lubricants</h2>
-               </div>
+              </div>
               <form>
                 <div className="form-outline mb-4">
                   <label className="form-label">Name</label>
-                  <input type="text" className="form-control form-control-lg" required placeholder="User Name"  autoFocus/>
+                  <input
+                    type="text"
+                    className="form-control form-control-lg"
+                    required
+                    placeholder="User Name"
+                    autoFocus
+                  />
                 </div>
                 <div className="form-outline mb-4">
-                <label className="form-label">Password</label>
-                  <input className="form-control form-control-lg" type="password" required placeholder="Password"/>
+                  <label className="form-label">Password</label>
+                  <input
+                    className="form-control form-control-lg"
+                    type="password"
+                    required
+                    placeholder="Password"
+                  />
                 </div>
                 <div className="d-flex justify-content-between align-items-center mb-4">
                   <div className="form-check">
@@ -32,20 +44,20 @@ const Login = () => {
                       className="form-check-input p-0"
                       type="checkbox"
                       value=""
-
-                     
-
-                      
                     />
-                    <label className="form-check-label" >
-                      {" "}
-                      Remember Me{" "}
-                    </label>
+                    <label className="form-check-label"> Remember Me </label>
                   </div>
                   <a href="#!">Forgot password?</a>
                 </div>
-                <button type="submit" className="btn btn-primary btn-lg btn-block btn-dark w-100 " onClick={(e)=>e.preventDefault()} >Sign in</button>
-                
+                <Link to="">
+                  <button
+                    type="submit"
+                    className="btn btn-primary btn-lg btn-block btn-dark w-100 "
+                    onClick={(e) => console.log(e)}
+                  >
+                    Sign in
+                  </button>
+                </Link>
               </form>
             </div>
           </div>

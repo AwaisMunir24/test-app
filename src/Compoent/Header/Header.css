@@ -1,26 +1,220 @@
-.header-section{
-    background: #fff;
-    line-height: 50px;  
-    border-bottom: 1px solid #dedede;
-    margin-bottom: 0;
-    min-height: 66px;
-    padding: 0 15px 0 0;
-}
-.logo-wrapper img{
-    width: 40px;
-    border-radius: 50%;
-}
-.profile img{
-    width: 40px;  
-    cursor: pointer;
-}
-.logo-wrapper a{
-    text-decoration: none;
-}
-.company-name{
-    font-family: 'Poppins', sans-serif;
-    font-size: 21px;
-    line-height: 32px;
-    color: #212121;
+.logo-view img {
+width: 100px;
+height: 70px;
+border-radius: 50%;
 }
 
+.icon {
+margin-right: 20px;
+align-items: center;
+background: #efefef;
+border-radius: 50%;
+color: #333;
+cursor: pointer;
+display: flex;
+float: left;
+justify-content: center;
+line-height: 40px;
+margin-right: 20px;
+min-height: 40px;
+min-width: 40px;
+text-align: center
+}
+
+.header-section2 {
+background-color: #fff;
+box-shadow: 0 18px 40px -30px rgb(35 38 58 / 21%);
+padding: 20px 0px;
+position: fixed;
+width: 100%;
+z-index: 1;
+height: 100px;
+top: 0px;
+}
+
+.header-section {
+background-color: #fff;
+box-shadow: 0 18px 40px -30px rgb(35 38 58 / 21%);
+padding: 20px 0px;
+position: fixed;
+width: 100%;
+z-index: 1;
+height: 100px;
+}
+
+.toggle-switch {
+display: inline-block;
+height: 34px;
+position: relative;
+width: 60px;
+}
+
+.rounder {
+background-color: #ccc;
+bottom: 0;
+cursor: pointer;
+left: 0;
+position: absolute;
+right: 0;
+top: 0;
+transition: .4s;
+border-radius: 34px;
+}
+
+.toggle-switch .slider:before {
+background: #fff;
+content: "";
+height: 26px;
+position: absolute;
+transition: 0.4s;
+width: 26px;
+top: 4px;
+}
+
+.rounder:before {
+border-radius: 50%;
+left: 4px;
+}
+
+.sidebar-menu {
+position: relative;
+width: 60px;
+
+}
+
+
+
+.sidebar-menu.open {
+position: relative;
+width: 250px;
+border-right: 1px solid #ccc;
+background: transparent;
+}
+
+.sidebar-toggle {
+height: 40px;
+width: 40px;
+line-height: 46px;
+display: block;
+text-align: center;
+float: left;
+margin-right: 20px;
+color: #333;
+background: #efefef;
+border-radius: 50%;
+}
+
+.sidebar-toggle:hover i {
+color: #393939;
+;
+}
+
+.sidebar-toggle i {
+font-size: 23px;
+}
+
+.sidebar-menu .desktop-menu {
+height: 88vh;
+position: sticky;
+top: 0;
+
+/* .sidebar-menu .desktop-menu */
+padding: 30px 0;
+overflow-y: overlay;
+margin-top: 90px;
+}
+
+
+.sidebar-menu .desktop-menu::-webkit-scrollbar {
+width: 1px;
+}
+
+.sidebar-menu .desktop-menu::-webkit-scrollbar-track {
+box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-menu .desktop-menu::-webkit-scrollbar-thumb {
+background-color: darkgrey;
+outline: 1px solid #fafafa;
+}
+
+.sidebar-menu.open .desktop-menu {
+width: 246px;
+}
+
+.desktop-menu ul {
+padding-left: 0;
+}
+
+.desktop-menu ul li {
+list-style: none;
+}
+
+.sidebar-menu .desktop-menu ul li {
+text-align: center;
+font-size: 18px;
+}
+
+.sidebar-menu .desktop-menu ul li a {
+padding: 10px;
+display: block;
+}
+
+.sidebar-menu.open .desktop-menu ul li {
+text-align: unset;
+}
+
+.sidebar-menu.open .desktop-menu ul li a {
+display: block;
+padding: 10px 30px;
+font-weight: 500;
+
+
+}
+
+.sidebar-menu.open ul li a span {
+display: inline-block;
+color: #393939;
+;
+
+}
+
+.sidebar-menu.open ul li a:hover span {
+color: #393939;
+;
+}
+
+.sidebar-menu ul li a span {
+display: none;
+}
+
+.sidebar-menu.open .desktop-menu ul li.current-menu-item a:hover,
+.sidebar-menu.open .desktop-menu ul li a:hover {
+color: black;
+background-color: #F7F7F7;
+}
+
+.sidebar-menu.open .desktop-menu ul li a i {
+margin-right: 10px;
+font-size: smaller;
+line-height: 30px;
+width: 30px;
+height: 30px;
+
+}
+
+
+.desktop-menu ul li a i {
+line-height: 40px;
+color: #606060;
+text-align: center;
+border-radius: 50px;
+width: 40px;
+height: 40px;
+font-size: 18px;
+background: #efefef;
+}
+
+.desktop-menu ul li.current_page_item a i {
+color: #fff;
+}

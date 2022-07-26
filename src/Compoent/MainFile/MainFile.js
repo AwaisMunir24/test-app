@@ -1,27 +1,29 @@
-import React, { Component } from "react";
-import { Routes, Route, Link } from "react-router-dom";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footre";
+import React, { useState } from "react";
+import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import Login from "../Login/Login";
-import Invoices from "../invoices/Invoices";
-import AddProduct from "../addproduct/AddProduct";
-import AddClient from "../addClients/Add_Client";
-import HomePage from "../homepage/HomePage";
 
 const MainFile = () => {
+  const [addRmoveClass, setaddRmoveClass] = useState(true);
+  const _handleToggleClasses = () => {
+    setaddRmoveClass(!addRmoveClass);
+  };
+  const navigate = useNavigate();
+  const auth = localStorage.getItem("user");
+  const logout = () => {
+    localStorage.clear();
+    navigate("/Login");
+  };
   return (
     <>
-      <Header />
-      <main>
+      <div className="main-container ">
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="invoices" element={<Invoices />} />
+          {/* <Route path="invoices" element={<Invoices />} />
           <Route path="addproduct" element={<AddProduct />} />
           <Route path="addclient" element={<AddClient />} />
-          <Route path="homepage" element={<HomePage />} />
+          <Route path="homepage" element={<HomePage />} /> */}
         </Routes>
-      </main>
-      <Footer />
+      </div>
     </>
   );
 };

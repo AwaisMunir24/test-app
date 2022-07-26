@@ -1,67 +1,98 @@
-import React, { Component } from "react";
+import React, {  useState } from "react";
+import { Link, Route, Routes } from "react-router-dom";
 import logo from "../../Assestes/photos/lubi.jpg";
-import profile from "../../Assestes/photos/profile.jpg";
-import { Link } from "react-router-dom";
-import { Menudata } from "./MenuData";
+import Invoices from "../invoices/Invoices";
+import AddClient from "../addClients/Add_Client";
+import AddProduct from "../addproduct/AddProduct";
+import HomePage from "../homepage/HomePage";
 import "./Header.css";
+
+import SidebarMenu from "../MenuSideBar/MenuSidebar";
 const Header = () => {
+  const [Toogle, setToogle] = useState(false);
+  const handleToggle = () => {
+    setToogle(!Toogle);
+    console.log("hello");
+  };
+  const [login, setLogin] = useState(true);
+  const handleLogout = () => {
+    setLogin(!login);
+  };
+
+   const [addRmoveClass, setaddRmoveClass] = useState(true);
+  const _handleToggleClasses = () => {
+    setaddRmoveClass(!addRmoveClass);
+  };
+
   return (
     <>
-      <header className="">
-        <div className="container-fluid header-section">
-          <div className="row justify-content-between align-items-center">
-            <div className="col-lg-4 col-md-3 col-sm-4">
-              <div className="logo-wrapper d-flex align-items-center">
-                <a href="#">
-                  <img src={logo} />
-                </a>
-                <a href="#">
-                  <h4 className="m-0 company-name">Lubricants</h4>
-                </a>
-              </div>
-            </div>
-            <div className="col-lg-8 col-md-9 col-sm-8 d-flex justify-content-end align-items-center profile ">
-              <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm">
-                <div className="container-fluid">
-                  
-                  <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                  >
-                    <span className="navbar-toggler-icon"></span>
-                  </button>
-                  <div className="collapse navbar-collapse" >
-                    <div className="navbar-nav">
-                     
-                      <Link className="nav-link" to="/">
-                        Login
-                      </Link>
-                      <Link className="nav-link" to="/invoices">
-                        Invoices
-                      </Link>
-                      <Link className="nav-link" to="/addproduct">
-                        Add product
-                      </Link>
-                      <Link className="nav-link" to="/addclient">
-                        Add Clients
-                      </Link>
-                      <Link className="nav-link" to="/homepage">
-                        Home Page
-                      </Link>
-                    </div>
+      {login ? (
+        <header className="header-section">
+          <div className="container-fluid">
+            <div className="row align-items-center justify-content-between">
+              <div className="col-lg-2">
+                <div className="d-flex align-items-center">
+                  <div className="logo-first-sec "></div>
+                  <div className="logo-view">
+                    <img src={logo} alt="logo" />
                   </div>
                 </div>
-              </nav>
-              <img src={profile} />
+              </div>
+
+              <div className="col-lg-8 text-end">
+                <Link to="/invoices" onClick={handleLogout}>
+                  Login
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
+      ) : (
+        <section className="">
+          <header className="header-section2">
+            <div className="container-fluid">
+              <div className="row align-items-center justify-content-between">
+                <div className="col-lg-4">
+                  <div className="d-flex align-items-center">
+                    <div className="logo-first-sec "></div>
+                  </div>
+                </div>
+
+                <div className="col-lg-6 text-end justify-content-between d-flex align-items-center">
+                  <div className="logo-view">
+                    <img src={logo} alt="logo" />
+                  </div>
+
+                  <Link to="/" onClick={handleLogout}>
+                    LogOut
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </header>
+          <div className="container-fluid d-flex  p-0 topspace-90">
+            <div
+              className="sidebar-toggle sssss"
+              onClick={() => _handleToggleClasses()}
+            >
+              <i className="fa-solid fa-bars"> </i>
+            </div>
+            <div
+              className={addRmoveClass ? "sidebar-menu open" : "sidebar-menu"}
+            >
+              <SidebarMenu />
+            </div>
+            <div className="main-container ">
+              <Routes>
+                <Route path="/invoices" element={<Invoices />} />
+                <Route path="addproduct" element={<AddProduct />} />
+                <Route path="addclient" element={<AddClient />} />
+                <Route path="homepage" element={<HomePage />} />
+              </Routes>
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 };

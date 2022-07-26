@@ -3,6 +3,7 @@ import "./AddProduct.css";
 import Abs_Button from "../../AbstractComponent/Abs_Button/Abs_Button";
 import { Link } from "react-router-dom";
 import Abs_Input from "../../AbstractComponent/Abs_input/Abs_input";
+import Abs_Heading from "../../AbstractComponent/Abs_Heading/Abs_Heading";
 
 const AddProduct = () => {
   function getItems() {
@@ -49,8 +50,11 @@ const AddProduct = () => {
       <section className="addproductsection">
         <div className="container">
           <div className="row heading-row">
-            <div className="col-lg-12 head">
-              <h3 className="text-center">Product Info</h3>
+            <div className="col-lg-12 head text-center">
+              <Abs_Heading
+              heading="Product Info"
+              />
+             
             </div>
           </div>
           <form>
