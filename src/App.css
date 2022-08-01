@@ -11,14 +11,22 @@
 .sidebar-toggle.sssss {
     left: 12px;
     position: fixed;
-    top: 25px;
+    top: 32px;
     z-index: 100000000000000000000;
+    left: 40px;
 }
 .logo-img{
     width: 200px;
     height: 60px;
 }
 section{
-    height: 100vh;
+    /* height: 100vh; */
     padding-top: 28px;
 }
+.addproductsection , .addproductsection ,.task-section ,.login-bg ,.payment-section{
+height: 100vh;
+}
+.form-control:focus {
+    border-color: #777777 !important;
+    
+  }

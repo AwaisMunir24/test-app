@@ -9,7 +9,7 @@ textarea{
 }
 .icon-div{
     margin-right: 10px;
-    background: #393939;
+    /* background: #393939; */
     width:40px;
     height: 40px;
     border-radius: 50%;

@@ -1,0 +1,6 @@
+ const PERCENTAGE = "PERCENTAGE";
+ const FIXED = "FIXED";
+ const COMPANY ="COMPANY";
+const CASH = "CASH";
+const BANK ="BANK"
+export  {PERCENTAGE,FIXED,COMPANY,CASH,BANK}

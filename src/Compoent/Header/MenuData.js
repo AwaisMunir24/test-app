@@ -18,7 +18,7 @@ export const MenuData = [
       id: 3,
       name: "Add Client",
       classname: "nav-link",
-     icon:<i class="fa-solid fa-user"></i>,
+     icon:<i className="fa-solid fa-user"></i>,
       path: "addclient",
     },
     {
@@ -39,9 +39,29 @@ export const MenuData = [
       id: 6,
       name: "Companies",
       classname: "nav-link",
-      icon:<i class="fa-solid fa-building"></i>,
+      icon:<i className="fa-solid fa-building"></i>,
       path: "company",
     },
-   
+    // {
+    //   id: 7,
+    //   name: "Proxy",
+    //   classname: "nav-link",
+    //   icon:<i className="fa-solid fa-spider"></i>,
+    //   path: "homepage",
+    // },
+    {
+      id: 7,
+      name: "Quotation",
+      classname: "nav-link",
+      icon:<i className="fa-solid fa-quote-left"></i>,
+      path: "quote",
+    },
+    {
+      id: 8,
+      name: "Payments",
+      classname: "nav-link",
+      icon:<i className="fa-solid fa-money-bill"></i>,
+      path: "pay",
+    },
  
   ];

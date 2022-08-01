@@ -8,6 +8,8 @@ import HomePage from "../homepage/HomePage";
 import Sales from "../sales/Sales";
 import Tasks from "../tasks/Tasks";
 import Company from "../company/Company";
+import Quotation from "../quotation/Quotation";
+import Payments from "../payments/Payments";
 import "./Header.css";
 
 import SidebarMenu from "../MenuSideBar/MenuSidebar";
@@ -37,7 +39,9 @@ const Header = () => {
                 <div className="d-flex align-items-center">
                   <div className="logo-first-sec "></div>
                   <div className="logo-view">
+                   <Link to="/homepage">
                     <img src={logo} alt="logo" />
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -62,8 +66,11 @@ const Header = () => {
                 </div>
 
                 <div className="col-lg-6 text-end justify-content-between d-flex align-items-center">
-                  <div className="logo-view">
+
+                  <div className="logo-view"> 
+                
                     <img src={logo} alt="logo" />
+                   
                   </div>
 
                   <Link to="/" onClick={handleLogout}>
@@ -88,12 +95,13 @@ const Header = () => {
             <div className="main-container ">
               <Routes>
                 <Route path="/invoices" element={<Invoices />} />
-                <Route path="addproduct" element={<AddProduct />} />
-                <Route path="addclient" element={<AddClient />} />
-                <Route path="homepage" element={<HomePage />} />
-                <Route path="sales" element={<Sales/>} />
-                <Route path="tasks" element={<Tasks/>} />
-                <Route path="company" element={<Company/>} />
+                <Route path="/addproduct" element={<AddProduct />} />
+                <Route path="/addclient" element={<AddClient />} />
+                <Route path="/sales" element={<Sales/>} />
+                <Route path="/tasks" element={<Tasks/>} />
+                <Route path="/company" element={<Company/>} />
+                <Route path="/quote" element={<Quotation/>} />
+                <Route path="/pay" element={<Payments/>} />
               </Routes>
             </div>
           </div>

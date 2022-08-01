@@ -6,7 +6,7 @@ const {events,changeFunc,type,classN,val,placeholder}=props;
 return(
 
 <>
-<input required onClick={events} onChange={changeFunc} type={type} className={classN} value={val} placeholder={placeholder}/>
+<input  onClick={events} onChange={changeFunc} type={type} className={classN} value={val} placeholder={placeholder}/>
 </>
 
 )

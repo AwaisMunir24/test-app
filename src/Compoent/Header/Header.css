@@ -106,7 +106,7 @@ border-radius: 50%;
 
 .sidebar-toggle:hover i {
 color: #393939;
-;
+
 }
 
 .sidebar-toggle i {
@@ -175,13 +175,13 @@ font-weight: 500;
 .sidebar-menu.open ul li a span {
 display: inline-block;
 color: #393939;
-;
+
 
 }
 
 .sidebar-menu.open ul li a:hover span {
 color: #393939;
-;
+
 }
 
 .sidebar-menu ul li a span {
@@ -217,4 +217,10 @@ background: #efefef;
 
 .desktop-menu ul li.current_page_item a i {
 color: #fff;
+/* #212529 */
+}
+a{
+    color:#212529 !important;
+    font-size: 18px;
+    margin-right: 15px;
 }

@@ -3,8 +3,8 @@ import Table_Row from "../../AbstractComponent/tablerow/Table_Row";
 import Abs_Heading from "../../AbstractComponent/Abs_Heading/Abs_Heading";
 import Abs_Input from "../../AbstractComponent/Abs_input/Abs_input";
 import Abs_miniTable from "../../AbstractComponent/Abs_miniTable/Abs_miniTable";
-import "./Invoices.css";
-const Invoices = () => {
+import './Quotation.css'
+const Quotation = () => {
   const [name, setName] = useState("Makkah Oil ");
   const [address, setAddress] = useState();
   const [town, setTown] = useState();
@@ -73,7 +73,7 @@ const Invoices = () => {
             <div className="row">
               <div className="col-lg-12 col-md-12 col-sm-12">
                 <div className="button-n-secName d-flex justify-content-center align-items-center mb-4 pt-4">
-                  <Abs_Heading heading="Invoices" />
+                  <Abs_Heading heading="Quotation" />
                 </div>
               </div>
             </div>
@@ -177,7 +177,7 @@ const Invoices = () => {
                       <th>Products</th>
                       <th>Qty</th>
                       <th>Sale</th>
-                      <th>Sales</th>
+                      <th>sales</th>
                       <th>Discount</th>
                       <th>Net Amount</th>
                       <th>Free Quantity</th>
@@ -243,19 +243,18 @@ const Invoices = () => {
                     <td>
                       <Abs_miniTable firstVal="0" secondVal="0" thirdVal="0" />
                     </td>
-                    <td>
+                    <td >
                       <Abs_miniTable firstVal="0" />
                     </td>
                     <td>
                       <Abs_miniTable firstVal="0"  secondVal="0"/>
                     </td>
-                   
                   </tr>
                 </table>
               </div>
             </div>
             <div className="row align-items-end">
-              <div className="col-lg-8 col-md-8">
+              <div className="col-lg-8">
                 <div className="rupe-val">
                   <p>
                     <span>Rupees:</span>
@@ -263,52 +262,26 @@ const Invoices = () => {
                   </p>
                 </div>
               </div>
-              <div className="col-lg-4 col-md-4 ">
+              <div className="col-lg-4">
                 <table className=" ">
                   <tr>
                     <td>Total Value</td>
-                    <td>
+                    <td colSpan={3}>
                       <Abs_Input type="readOnly" />
                     </td>
                   </tr>
-                  <tr>
-                    <td>Lamsum Discount</td>
-                    <td>
-                      <Abs_Input type="readOnly" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Total Net Receivables</td>
-                    <td>
-                      <Abs_Input type="readOnly" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Received Amount</td>
-                    <td>
-                      <Abs_Input type="readOnly" />
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Remaining Amount</td>
-                    <td>
-                      <Abs_Input type="readOnly" />
-                    </td>
-                  </tr>
+                 
+                 
+                  
+                  
                 </table>
               </div>
             </div>
-            <div className="row mt-3">
-              <div className="col-lg-11">
-                <p className="d-flex align-items-cneter remarks">
-                  <span>Remarks:</span> <Abs_Input type="text" classN="w-100" />
-                </p>
-              </div>
-            </div>
+          
           </div>
         </div>
       </section>
     </>
   );
 };
-export default Invoices;
+export default Quotation;

@@ -39,6 +39,18 @@ label {
     padding: 50px;
     text-align: center;
 }
+button#dropdownMenuButton{
+    background: #fff;
+    border: 1px solid #ced4da;
+    text-align: start;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.dropdown-menu.show {
+width: 100%;
+}
+
 @media screen and (max-width: 992px) {
     .heading-row  , .form-submit-button{
         padding: 30px;

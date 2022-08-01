@@ -32,13 +32,13 @@ const Sales = () => {
             <div className="col-lg-12">
               <table className="table w-100"> 
             <thead>
-                    <tr>
+                    <tr className="text-center">
                       <th>#</th>
-                      <th>Products</th>
-                      <th>Unit Cost</th>
-                      <th>Unit Price</th>
-                      <th>Qty</th>
-                      <th></th>
+                      <th>Invoice Number</th>
+                      <th>Date</th>
+                      <th>Total  Price</th>
+                      <th>Items Sold</th>
+                      
                     </tr>
                   </thead>
                   </table>
