@@ -86,7 +86,14 @@ const Company=()=>{
           </div>
           </div>
      
-         
+         <div>{
+          compDetail.map((e,idx)=>(
+            <div>
+              {e.name}
+              {e.detail}
+            </div>
+          ))
+          }</div>
           
          
         </div>

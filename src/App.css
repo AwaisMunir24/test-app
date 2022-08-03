@@ -23,7 +23,7 @@ section{
     /* height: 100vh; */
     padding-top: 28px;
 }
-.addproductsection , .addproductsection ,.task-section ,.login-bg ,.payment-section{
+.addproductsection , .addproductsection ,.task-section ,.login-bg   {
 height: 100vh;
 }
 .form-control:focus {

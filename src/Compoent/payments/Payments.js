@@ -69,7 +69,7 @@ const Payments=()=>{
                     >
                       <p className="m-0">
                         {" "}
-                        Select Discount Mode {`${payType}`}{" "}
+                        Select Payment Mode {`${payType}`}{" "}
                       </p>
                     </button>
                     <div

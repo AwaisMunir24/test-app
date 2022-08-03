@@ -1,0 +1,8 @@
+.first-expense-section{
+    background: #F7F7F7;
+    padding:15px 0px;
+}
+table th{
+    border-top: none !important;
+    border-bottom: 1px solid #dee2e6 !important;
+}

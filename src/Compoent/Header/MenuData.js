@@ -63,5 +63,12 @@ export const MenuData = [
       icon:<i className="fa-solid fa-money-bill"></i>,
       path: "pay",
     },
+    {
+      id: 9,
+      name: "Expenses",
+      classname: "nav-link",
+      icon:<i className="fa-solid fa-money-bill"></i>,
+      path: "expense",
+    },
  
   ];
