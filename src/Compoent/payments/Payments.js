@@ -16,7 +16,8 @@ const Payments=()=>{
     }
     return(
         <>
-        <section className="payment-section">
+        <section>
+          <div  className="payment-section">
         <div className="container">
           <div className="row heading-row">
             <div className="col-lg-12 text-center mb-4">
@@ -32,7 +33,11 @@ const Payments=()=>{
             </div>
           </div>
           </div>
-          <div className='row'>
+          </div>
+          </div>
+          <div className='second-payment'>
+            <div className='container'>
+            <div className='row'>
             <div className='col-lg-6'>
                 <div className='d-flex align-items-center'>
                 <label className='mb-0'>Name:</label>    
@@ -106,9 +111,14 @@ const Payments=()=>{
                     />
                 </div>
           </div>
+            </div>
+          </div>
+       
+        
+        
 
          
-        </div>
+      
       </section>
         </>
     )
