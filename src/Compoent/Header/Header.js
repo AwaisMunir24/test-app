@@ -11,6 +11,7 @@ import Company from "../company/Company";
 import Quotation from "../quotation/Quotation";
 import Payments from "../payments/Payments";
 import Expenses from "../expenses/Expenses";
+import CashInvoices from "../cashinvoice/CashInvoice";
 import "./Header.css";
 
 import SidebarMenu from "../MenuSideBar/MenuSidebar";
@@ -104,6 +105,7 @@ const Header = () => {
                 <Route path="/quote" element={<Quotation/>} />
                 <Route path="/pay" element={<Payments/>} />
                 <Route path="/expense" element={<Expenses/>} />
+                <Route path="/cash" element={<CashInvoices/>} />
               </Routes>
             </div>
           </div>

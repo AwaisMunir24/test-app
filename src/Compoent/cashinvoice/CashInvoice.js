@@ -3,11 +3,11 @@ import Table_Row from "../../AbstractComponent/tablerow/Table_Row";
 import Abs_Heading from "../../AbstractComponent/Abs_Heading/Abs_Heading";
 import Abs_Input from "../../AbstractComponent/Abs_input/Abs_input";
 import Abs_miniTable from "../../AbstractComponent/Abs_miniTable/Abs_miniTable";
-import './Quotation.css'
-const Quotation = () => {
+import "./CashInvoice.css";
+const CashInvoices = () => {
   const [name, setName] = useState("Makkah Oil ");
-  const [address, setAddress] = useState();
-  const [town, setTown] = useState();
+  const [address, setAddress] = useState("Faisalabad");
+  const [town, setTown] = useState("Faisalabad");
   const [area, setArea] = useState();
   const [zone, setZone] = useState();
   const [invoice, setInvoice] = useState();
@@ -64,7 +64,6 @@ const Quotation = () => {
   useEffect(() => {
     localStorage.setItem("productData", JSON.stringify(tableData));
   }, [tableData]);
-
   return (
     <>
       <section className="">
@@ -73,7 +72,7 @@ const Quotation = () => {
             <div className="row">
               <div className="col-lg-12 col-md-12 col-sm-12">
                 <div className="button-n-secName d-flex justify-content-center align-items-center mb-4 pt-4">
-                  <Abs_Heading heading="Quotation" />
+                  <Abs_Heading heading="Cash Invoice" />
                 </div>
               </div>
             </div>
@@ -83,13 +82,9 @@ const Quotation = () => {
                   <table className="table table-bordered ">
                     <thead>
                       <tr>
-                        <td>Customer Name: </td>
+                        <td>Provider Name: </td>
                         <td colSpan={3}>
-                          <input
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            className="w-100"
-                          />
+                          <input value={name} className="w-100" />
                         </td>
                       </tr>
                     </thead>
@@ -98,36 +93,13 @@ const Quotation = () => {
                         <td>Address:</td>
                         <td>
                           {" "}
-                          <input
-                            value={address}
-                            onChange={(e) => setAddress(e.target.value)}
-                            className="w-100"
-                          />
+                          <input value={address} className="w-100" />
                         </td>
                         <td>Town:</td>
                         <td>
                           <input
                             value={town}
                             onChange={(e) => setTown(e.target.value)}
-                            className="w-100"
-                          />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Teritory:</td>
-                        <td>
-                          {" "}
-                          <input
-                            value={area}
-                            onChange={(e) => setArea(e.target.value)}
-                            className="w-100"
-                          />
-                        </td>
-                        <td>Zone:</td>
-                        <td>
-                          <input
-                            value={zone}
-                            onChange={(e) => setZone(e.target.value)}
                             className="w-100"
                           />
                         </td>
@@ -140,7 +112,7 @@ const Quotation = () => {
                 <table class="table table-bordered">
                   <tbody>
                     <tr>
-                      <td>Sales Invoice:</td>
+                      <td>Cash Invoice:</td>
                       <td>
                         <input
                           value={invoice}
@@ -176,112 +148,41 @@ const Quotation = () => {
                       <th>#</th>
                       <th>Products</th>
                       <th>Qty</th>
-                      <th>Sale</th>
-                      <th>sales</th>
                       <th>Discount</th>
-                      <th>Net Amount</th>
-                      <th>Free Quantity</th>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                      <td>
-                        <Abs_miniTable firstVal="Packs" secondVal="Pieces" />
-                      </td>
-                      <td>
-                        <Abs_miniTable firstVal="Rate" />
-                      </td>
-                      <td>
-                        <Abs_miniTable firstVal="Value" />
-                      </td>
-                      <td>
-                        <Abs_miniTable
-                          firstVal="%"
-                          secondVal="Fixed"
-                          thirdVal="Amount"
-                        />
-                      </td>
-                      <td>
-                        <Abs_miniTable firstVal="Receivables" />
-                      </td>
-                      <td>
-                        <Abs_miniTable firstVal="Packs" 
-                        secondVal="Pieces"
-                        />
-                      </td>
+                      <th>Total</th>
                     </tr>
                   </thead>
-                  <tbody>
-                    {_getData().map((e, idx) => (
-                      <Table_Row
-                        key={idx}
-                        id={e.id}
-                        productsName={e.ProductName}
-                        unitcost={e.cost}
-                        unitprice={e.price}
-                        qty={e.qty}
-                        pressDlt={() => {
-                          setTableData(
-                            tableData.filter((ele) => ele.id !== e.id)
-                          );
-                        }}
-                      />
-                    ))}
-                  </tbody>
-                  <tr>
-                    <td></td>
-                    <td>Total</td>
-                    <td>
-                      <Abs_miniTable firstVal="0" secondVal="0" />
-                    </td>
-                    <td>
-                      <Abs_miniTable firstVal="0" />
-                    </td>
-                    <td>
-                      <Abs_miniTable firstVal="0" />
-                    </td>
-                    <td>
-                      <Abs_miniTable firstVal="0" secondVal="0" thirdVal="0" />
-                    </td>
-                    <td >
-                      <Abs_miniTable firstVal="0" />
-                    </td>
-                    <td>
-                      <Abs_miniTable firstVal="0"  secondVal="0"/>
-                    </td>
-                  </tr>
+                  <tbody></tbody>
                 </table>
               </div>
             </div>
             <div className="row align-items-end">
-              <div className="col-lg-8">
-                <div className="rupe-val">
-                  <p>
-                    <span>Rupees:</span>
-                    {value}
-                  </p>
-                </div>
+              <div className="col-lg-8 col-md-8">
+              
               </div>
-              <div className="col-lg-4">
+              <div className="col-lg-4 col-md-4 ">
                 <table className=" ">
                   <tr>
-                    <td>Total Value</td>
-                    <td colSpan={3}>
+                    <td>Total Amount</td>
+                    <td>
                       <Abs_Input type="readOnly" />
                     </td>
                   </tr>
                  
-                 
-                  
-                  
                 </table>
               </div>
             </div>
-          
+            <div className="row mt-3">
+              <div className="col-lg-11">
+                <p className="d-flex align-items-cneter remarks">
+                  <span>Address:</span> <Abs_Input type="text" classN="w-100" />
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </>
   );
 };
-export default Quotation;
+export default CashInvoices;

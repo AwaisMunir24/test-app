@@ -3,6 +3,8 @@ import Abs_Heading from "../../AbstractComponent/Abs_Heading/Abs_Heading";
 import Abs_Input from "../../AbstractComponent/Abs_input/Abs_input";
 import "./Sales.css";
 const Sales = () => {
+
+  
   return (
     <>
       <section className="">

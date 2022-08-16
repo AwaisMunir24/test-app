@@ -1,3 +1,21 @@
 .payment-section {
     background: #a4c3b2;
 }
+.tablet-view{
+    width: 75% !important;
+}
+.tablet-view1{
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .tablet-view{
+            width: 100% !important;
+            margin-right: 0px !important;
+            
+    }
+    .paymet-inputs{
+        width: 63%;
+    }
+}
+

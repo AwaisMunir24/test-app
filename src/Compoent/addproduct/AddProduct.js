@@ -4,7 +4,15 @@ import Abs_Button from "../../AbstractComponent/Abs_Button/Abs_Button";
 import { Link } from "react-router-dom";
 import Abs_Input from "../../AbstractComponent/Abs_input/Abs_input";
 import Abs_Heading from "../../AbstractComponent/Abs_Heading/Abs_Heading";
-import { PERCENTAGE, FIXED, COMPANY } from "../../../src/redux/consts";
+import {
+  PERCENTAGE,
+  FIXED,
+  COMPANY,
+  GREESE,
+  LUBRICANTS,
+  ATF,
+  GEAROIL,
+} from "../../../src/redux/consts";
 
 const AddProduct = () => {
   function getItems() {
@@ -24,8 +32,11 @@ const AddProduct = () => {
   const [getpercent, setGetPercent] = useState(false);
   const [discountType, setDiscountType] = useState(PERCENTAGE);
   const [company, setCompany] = useState(COMPANY);
+  const [itemCategory, setItemCategory] = useState(GREESE);
 
   const [productData, setProductData] = useState(getItems());
+  const [carton, setCarton] = useState();
+  const [cat, setCat] = useState(false);
 
   console.log("=>", productData);
   const _handleSaveProduct = (e) => {
@@ -51,6 +62,11 @@ const AddProduct = () => {
     setGetPercent(!getpercent);
     setDiscountType(type);
   };
+  const Category = (e) => {
+    setCat(!cat);
+    setItemCategory(e);
+  };
+
   const handleCompany = () => {};
 
   return (
@@ -93,9 +109,69 @@ const AddProduct = () => {
                     classN="form-control"
                   />
                 </div>
+                <div className="input-section">
+                  <label className="form-label">Carton Price</label>
+                  <Abs_Input
+                    changeFunc={(e) => setCarton(e.target.value)}
+                    type="number"
+                    val={qty}
+                    classN="form-control"
+                  />
+                </div>
               </div>
               <div className="col-lg-6 col-md-6 col-sm-12">
                 <div>
+                  <label className="form-label">Category:</label>
+                  <div className="dropdown">
+                    <button
+                      className="btn drop-btn dropdown-toggle w-100"
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <p className="m-0">
+                        {" "}
+                        Select Categotry {`${itemCategory}`}{" "}
+                      </p>
+                    </button>
+                    <div
+                      className="dropdown-menu"
+                      aria-labelledby="dropdownMenuButton"
+                    >
+                      <a
+                        className="dropdown-item"
+                        href="#"
+                        onClick={() => Category(GREESE)}
+                      >
+                        {GREESE}
+                      </a>
+                      <a
+                        className="dropdown-item"
+                        href="#"
+                        onClick={() => Category(LUBRICANTS)}
+                      >
+                        {LUBRICANTS}
+                      </a>
+                      <a
+                        className="dropdown-item"
+                        href="#"
+                        onClick={() => Category(ATF)}
+                      >
+                        {ATF}
+                      </a>
+                      <a
+                        className="dropdown-item"
+                        href="#"
+                        onClick={() => Category(GEAROIL)}
+                      >
+                        {GEAROIL}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="input-section">
                   <label className="form-label">Discount:</label>
                   <div className="dropdown">
                     <button

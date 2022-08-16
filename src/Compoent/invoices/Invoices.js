@@ -83,7 +83,7 @@ const Invoices = () => {
                   <table className="table table-bordered ">
                     <thead>
                       <tr>
-                        <td>Distributor Name: </td>
+                        <td>Customer Name: </td>
                         <td colSpan={3}>
                           <input
                             value={name}
