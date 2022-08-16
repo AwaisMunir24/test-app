@@ -20,7 +20,7 @@ const Payments = () => {
   };
   return (
     <>
-      <section>
+      <section className="">
         <div className="payment-section">
           <div className="container">
             <div className="row heading-row">
@@ -95,13 +95,13 @@ const Payments = () => {
                       </td>
                     </tr>
                     <tr>
-                      <td>Receivables:</td>
+                      <td className="recevieabless">Receivables:</td>
                       <td>
                         {" "}
                         <input
                           value={receivable}
-                          onChange={(e) => setReceivable(e.target.value)}
-                          className="w-100"
+                          // onChange={(e) => setReceivable(e.target.value)}
+                          className="w-100 recevieabless"
                         />{" "}
                       </td>
                     </tr>
@@ -134,9 +134,9 @@ const Payments = () => {
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
-                      <p className="m-0">
+                      <p className="m-0 payment-dropdown">
                         {" "}
-                        Select Payment Mode {`${payType}`}{" "}
+                        Select Payment Mode <span> {`${payType}`}</span>{" "}
                       </p>
                     </button>
                     <div
@@ -162,7 +162,7 @@ const Payments = () => {
                 </div>
               </div>
             </div>
-            <div className="row mt-3">
+            <div className="row mt-3 pb-5">
               <div className="col-lg-6">
                 <textarea
                   rows={4}

@@ -212,7 +212,7 @@ const Invoices = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {_getData().map((e, idx) => (
+                    {/* {_getData().map((e, idx) => (
                       <Table_Row
                         key={idx}
                         id={e.id}
@@ -226,7 +226,7 @@ const Invoices = () => {
                           );
                         }}
                       />
-                    ))}
+                    ))} */}
                   </tbody>
                   <tr>
                     <td></td>

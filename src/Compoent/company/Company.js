@@ -44,7 +44,7 @@ const Company=()=>{
               <Abs_Heading heading="Company" />
             </div>
             <div className="row justify-content-center text-end">
-              <div className="col-lg-3">
+              {/* <div className="col-lg-3">
                 <span>To </span>
               <Abs_Input
                   type="date"
@@ -52,9 +52,9 @@ const Company=()=>{
                   classN="w-75 mb-2"
                  
                   />
-              </div>
-              <div className="col-lg-3 text-start">
-                <span>From </span>
+              </div> */}
+              <div className="col-lg-3 text-start d-flex">
+                <span>Date: </span>
               <Abs_Input
                   type="date"
                   placeholder="Enter the Task Title"

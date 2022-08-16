@@ -13,6 +13,7 @@ const CashInvoices = () => {
   const [invoice, setInvoice] = useState();
   const [date, setDate] = useState();
   const [value, setValue] = useState("Dummy Text Added");
+  const [totalamount,setTotalAmount]=useState("xyz");
   function getItems() {
     const item = localStorage.getItem("productData");
 
@@ -82,7 +83,7 @@ const CashInvoices = () => {
                   <table className="table table-bordered ">
                     <thead>
                       <tr>
-                        <td>Provider Name: </td>
+                        <td>Customer Name: </td>
                         <td colSpan={3}>
                           <input value={name} className="w-100" />
                         </td>
@@ -165,7 +166,7 @@ const CashInvoices = () => {
                   <tr>
                     <td>Total Amount</td>
                     <td>
-                      <Abs_Input type="readOnly" />
+                      <Abs_Input readOnly val={totalamount} />
                     </td>
                   </tr>
                  

@@ -1,8 +1,9 @@
 .main-container {
   
     padding-top: 25px;
-        overflow: hidden;
+        /* overflow: hidden; */
         width: 100%;
+        height: auto;
 
 }
 .topspace-90 {
@@ -13,7 +14,7 @@
     position: fixed;
     top: 32px;
     z-index: 100000000000000000000;
-    left: 40px;
+    left: 20px;
 }
 .logo-img{
     width: 200px;
@@ -23,10 +24,17 @@ section{
     /* height: 100vh; */
     padding-top: 28px;
 }
-.addproductsection , .addproductsection ,.task-section ,.login-bg   {
-height: 100vh;
+.addclient,.addproductsection ,.task-section ,.login-bg   {
+height: 100vh !important;
+overflow: scroll;
 }
-.form-control:focus {
+.form-control:focus , .dropdown-toggle:focus {
     border-color: #777777 !important;
     
   }
+.dropdown-toggle:focus {
+    box-shadow: 0px 1px 9px 3px rgba(119,119,119,0.74 ) !important;
+    -webkit-box-shadow: 0px 1px 9px 3px rgba(119,119,119,0.74);
+    -moz-box-shadow: 0px 1px 9px 3px rgba(119,119,119,0.74);
+
+}

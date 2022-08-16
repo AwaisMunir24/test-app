@@ -7,6 +7,12 @@
 .tablet-view1{
     width: 100%;
 }
+.payment-dropdown span{
+    font-weight: 700;
+}
+.recevieabless{
+    font-weight: 700;
+}
 
 @media only screen and (max-width: 768px) {
     .tablet-view{

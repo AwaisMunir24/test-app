@@ -33,7 +33,7 @@ const AddProduct = () => {
   const [discountType, setDiscountType] = useState(PERCENTAGE);
   const [company, setCompany] = useState(COMPANY);
   const [itemCategory, setItemCategory] = useState(GREESE);
-
+  const [fixedValue, setFixedValue] = useState();
   const [productData, setProductData] = useState(getItems());
   const [carton, setCarton] = useState();
   const [cat, setCat] = useState(false);
@@ -62,6 +62,7 @@ const AddProduct = () => {
     setGetPercent(!getpercent);
     setDiscountType(type);
   };
+
   const Category = (e) => {
     setCat(!cat);
     setItemCategory(e);
@@ -131,9 +132,9 @@ const AddProduct = () => {
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
-                      <p className="m-0">
+                      <p className="m-0 porduct-downdowns">
                         {" "}
-                        Select Categotry {`${itemCategory}`}{" "}
+                        Select Categotry <span>{`${itemCategory}`}</span>{" "}
                       </p>
                     </button>
                     <div
@@ -182,9 +183,12 @@ const AddProduct = () => {
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
-                      <p className="m-0">
+                      <p className="m-0 porduct-downdowns">
                         {" "}
-                        Select Discount Mode {`${discountType}`}{" "}
+                        Select Discount Mode <span>
+                          {" "}
+                          {`${discountType}`}
+                        </span>{" "}
                       </p>
                     </button>
                     <div
@@ -212,7 +216,12 @@ const AddProduct = () => {
                 <div className="input-section" aria-disabled>
                   <label className="form-label">Discount Price</label>
                   {getpercent ? (
-                    <input type="text" class="form-control" />
+                    <input
+                      type="text"
+                      class="form-control"
+                      value={fixedValue}
+                      onChange={(e) => setFixedValue(e.target.value)}
+                    />
                   ) : (
                     <input type="text" class="form-control" disabled />
                   )}

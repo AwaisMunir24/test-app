@@ -1,8 +1,16 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import Abs_Heading from "../../AbstractComponent/Abs_Heading/Abs_Heading";
 import Abs_Input from "../../AbstractComponent/Abs_input/Abs_input";
+import Abs_Button from "../../AbstractComponent/Abs_Button/Abs_Button";
 import "./Expenses.css";
 const Expenses = () => {
+  const [expenseDetail, setExpenseDetail] = useState();
+  const [edit, save] = useState(true);
+  const editsave = () => {
+    // updateValue({ ...item, value: parseInt(updatecount) });
+    save(!edit)
+}
+const [amount,setAmount]=useState();
   return (
     <>
       <section className="">
@@ -13,7 +21,7 @@ const Expenses = () => {
                 <Abs_Heading heading="Expense" />
               </div>
             </div>
-            <div className="row sales-section ">
+            {/* <div className="row sales-section ">
               <div className="col-lg-12 ">
                 <div className="d-flex justify-content-center">
                   <p>
@@ -26,7 +34,7 @@ const Expenses = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="second-sale-section">
@@ -45,11 +53,33 @@ const Expenses = () => {
                   <tbody>
                     <tr className="text-center">
                       <td>1</td>
-                      <td>10.10.2022</td>
                       <td>
-                        <input />
+                        <Abs_Input type="date" />
                       </td>
-                      <td>100/-</td>
+                      <td>
+                        {edit? <input
+                          className="w-75"
+                          type="text"
+                          placeholder="Enter Detail"
+                          value={expenseDetail}
+                          onChange={(e) => setExpenseDetail(e.target.value)}
+                        />:<div className="w-75 expensesvaluesd">{expenseDetail}</div>}
+                       
+                      </td>
+                      <td className="">
+                        {
+                          edit? <Abs_Input
+                          type="number"
+                          placeholder="Enter the Amount"
+                          val={amount}
+                          changeFunc={(e)=>setAmount(e.target.value)}
+                        />:<span>{amount}</span>
+                        }
+                       
+                      </td>
+                      <td>
+                      <Abs_Button title={edit ? "Save" : "Edit"} events={()=>editsave()}/>
+                      </td>
                     </tr>
                   </tbody>
                 </table>

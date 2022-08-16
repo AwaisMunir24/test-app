@@ -6,3 +6,10 @@ table th{
     border-top: none !important;
     border-bottom: 1px solid #dee2e6 !important;
 }
+.expensesvaluesd{
+    width: 100%;
+}
+.sales-section{
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
+}

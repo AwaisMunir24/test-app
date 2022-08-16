@@ -43,7 +43,7 @@ function getUsers () {
 
   return (
     <>
-      <section className="addproductsection">
+      <section className="addclient">
         <div className="container">
           <div className="row heading-row">
             <div className="col-lg-12 head text-center">
