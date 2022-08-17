@@ -38,6 +38,8 @@ const Payments = () => {
             </div>
           </div>
         </div>
+
+        {/* payment detail section */}
         <div className="second-payment">
           <div className="container">
             <div className="row">
@@ -71,6 +73,8 @@ const Payments = () => {
                       <td className="paymet-inputs">
                         {" "}
                         <input
+                          min={1}
+                          type="number"
                           value={amountReceived}
                           onChange={(e) => setAmountReceived(e.target.value)}
                           className="w-100"
@@ -122,6 +126,8 @@ const Payments = () => {
               </div>
             </div>
             <div className="row  mt-4">
+
+              {/* payment type section start here */}
               <div className="col-lg-6">
                 <div>
                   <label>Payments</label>
@@ -161,6 +167,7 @@ const Payments = () => {
                   </div>
                 </div>
               </div>
+              {/* payment seclection type section ends here */}
             </div>
             <div className="row mt-3 pb-5">
               <div className="col-lg-6">
@@ -178,6 +185,7 @@ const Payments = () => {
             </div>
           </div>
         </div>
+        {/* payment detail section ends here */}
       </section>
     </>
   );

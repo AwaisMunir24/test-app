@@ -54,6 +54,9 @@ button#dropdownMenuButton{
 .dropdown-menu.show {
 width: 100%;
 }
+.addproductsection .table{
+    background:white;
+}
 
 @media screen and (max-width: 992px) {
     .heading-row  , .form-submit-button{

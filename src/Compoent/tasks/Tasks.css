@@ -1,3 +1,6 @@
 .task-section{
     background: #F7F7F7;
 }
+.task-section .table{
+    background: white;
+}

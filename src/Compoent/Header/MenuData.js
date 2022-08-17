@@ -8,15 +8,22 @@ export const MenuData = [
       path: "/invoices",
     },
     {
+      id:10,
+      name:"Cash Invoices",
+      className:"nav-link",
+      icon:<i className="fa-solid fa-receipt"></i>,
+      path:"cash"
+    },
+    {
       id: 2,
-      name: "Add Product",
+      name: "Products",
       classname: "nav-link",
       icon:<i className="fa-brands fa-product-hunt"></i>,
       path: "addproduct",
     },
     {
       id: 3,
-      name: "Add Client",
+      name: "Clients",
       classname: "nav-link",
      icon:<i className="fa-solid fa-user"></i>,
       path: "addclient",
@@ -71,11 +78,12 @@ export const MenuData = [
       path: "expense",
     },
     {
-      id:10,
-      name:"Cash Invoices",
+      id:11,
+      name:"Price List",
       className:"nav-link",
-      icon:<i class="fa-solid fa-receipt"></i>,
-      path:"cash"
-    }
+      icon:<i className="fa-solid fa-clipboard-list"></i>,
+      path:"picelist"
+    },
+   
  
   ];

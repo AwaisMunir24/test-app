@@ -48,6 +48,7 @@ const AddProduct = () => {
         cost,
         price,
         qty,
+        carton
       },
     ];
 
@@ -79,168 +80,228 @@ const AddProduct = () => {
               <Abs_Heading heading="Product Info" />
             </div>
           </div>
-          <form>
-            <div className="row">
-              <div className="col-lg-6 col-md-6 col-sm-12">
-                <div>
-                  <label className="form-label">Product</label>
-                  <Abs_Input
-                    changeFunc={(e) => setProductName(e.target.value)}
-                    type="text"
-                    val={ProductName}
-                    classN="form-control"
-                  />
-                </div>
-                <div className="input-section">
-                  <label className="form-label">Unit Price</label>
-                  <Abs_Input
-                    changeFunc={(e) => setPrice(e.target.value)}
-                    type="number"
-                    val={price}
-                    classN="form-control"
-                  />
-                </div>
+          {/* <!-- Tabs navs --> */}
+          <ul className="nav nav-tabs mb-3" id="ex1" role="tablist">
+            <li className="nav-item" role="presentation">
+              <a
+                className="nav-link active"
+                id="ex1-tab-1"
+                data-mdb-toggle="tab"
+                href="#ex1-tabs-1"
+                role="tab"
+                aria-controls="ex1-tabs-1"
+                aria-selected="true"
+              >
+                Add product
+              </a>
+            </li>
+            <li className="nav-item" role="presentation">
+              <a
+                className="nav-link"
+                id="ex1-tab-2"
+                data-mdb-toggle="tab"
+                href="#ex1-tabs-2"
+                role="tab"
+                aria-controls="ex1-tabs-2"
+                aria-selected="false"
+              >
+                Product list
+              </a>
+            </li>
+          </ul>
+          {/* <!-- Tabs navs --> */}
 
-                <div className="input-section">
-                  <label className="form-label">Quantity</label>
-                  <Abs_Input
-                    changeFunc={(e) => setQty(e.target.value)}
-                    type="number"
-                    val={qty}
-                    classN="form-control"
-                  />
-                </div>
-                <div className="input-section">
-                  <label className="form-label">Carton Price</label>
-                  <Abs_Input
-                    changeFunc={(e) => setCarton(e.target.value)}
-                    type="number"
-                    val={qty}
-                    classN="form-control"
-                  />
-                </div>
-              </div>
-              <div className="col-lg-6 col-md-6 col-sm-12">
-                <div>
-                  <label className="form-label">Category:</label>
-                  <div className="dropdown">
-                    <button
-                      className="btn drop-btn dropdown-toggle w-100"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      <p className="m-0 porduct-downdowns">
-                        {" "}
-                        Select Categotry <span>{`${itemCategory}`}</span>{" "}
-                      </p>
-                    </button>
-                    <div
-                      className="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <a
-                        className="dropdown-item"
-                        href="#"
-                        onClick={() => Category(GREESE)}
-                      >
-                        {GREESE}
-                      </a>
-                      <a
-                        className="dropdown-item"
-                        href="#"
-                        onClick={() => Category(LUBRICANTS)}
-                      >
-                        {LUBRICANTS}
-                      </a>
-                      <a
-                        className="dropdown-item"
-                        href="#"
-                        onClick={() => Category(ATF)}
-                      >
-                        {ATF}
-                      </a>
-                      <a
-                        className="dropdown-item"
-                        href="#"
-                        onClick={() => Category(GEAROIL)}
-                      >
-                        {GEAROIL}
-                      </a>
+          {/* <!-- Tabs content --> */}
+          <div class="tab-content" id="ex1-content">
+            <div
+              class="tab-pane fade show active"
+              id="ex1-tabs-1"
+              role="tabpanel"
+              aria-labelledby="ex1-tab-1"
+            >
+              <form>
+                <div className="row">
+                  <div className="col-lg-6 col-md-6 col-sm-12">
+                    <div>
+                      <label className="form-label">Product</label>
+                      <Abs_Input
+                        changeFunc={(e) => setProductName(e.target.value)}
+                        type="text"
+                        val={ProductName}
+                        classN="form-control"
+                      />
+                    </div>
+                    <div className="input-section">
+                      <label className="form-label">Unit Price</label>
+                      <Abs_Input
+                        changeFunc={(e) => setPrice(e.target.value)}
+                        type="number"
+                        val={price}
+                        classN="form-control"
+                      />
+                    </div>
+
+                    <div className="input-section">
+                      <label className="form-label">Quantity</label>
+                      <Abs_Input
+                        changeFunc={(e) => setQty(e.target.value)}
+                        type="number"
+                        val={qty}
+                        classN="form-control"
+                      />
+                    </div>
+                    <div className="input-section">
+                      <label className="form-label">Carton Price</label>
+                      <Abs_Input
+                        changeFunc={(e) => setCarton(e.target.value)}
+                        type="number"
+                        val={carton}
+                        classN="form-control"
+                      />
                     </div>
                   </div>
-                </div>
-                <div className="input-section">
-                  <label className="form-label">Discount:</label>
-                  <div className="dropdown">
-                    <button
-                      className="btn drop-btn dropdown-toggle w-100"
-                      type="button"
-                      id="dropdownMenuButton"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      <p className="m-0 porduct-downdowns">
-                        {" "}
-                        Select Discount Mode <span>
-                          {" "}
-                          {`${discountType}`}
-                        </span>{" "}
-                      </p>
-                    </button>
-                    <div
-                      className="dropdown-menu"
-                      aria-labelledby="dropdownMenuButton"
-                    >
-                      <a
-                        className="dropdown-item"
-                        href="#"
-                        onClick={() => handleDisbale(FIXED)}
-                      >
-                        {FIXED}
-                      </a>
-                      <a
-                        className="dropdown-item"
-                        href="#"
-                        onClick={() => handleDisbale(PERCENTAGE)}
-                      >
-                        {PERCENTAGE}
-                      </a>
+                  <div className="col-lg-6 col-md-6 col-sm-12">
+                    <div>
+                      <label className="form-label">Category:</label>
+                      <div className="dropdown">
+                        <button
+                          className="btn drop-btn dropdown-toggle w-100"
+                          type="button"
+                          id="dropdownMenuButton"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <p className="m-0 porduct-downdowns">
+                            {" "}
+                            Select Categotry <span>{`${itemCategory}`}</span>{" "}
+                          </p>
+                        </button>
+                        <div
+                          className="dropdown-menu"
+                          aria-labelledby="dropdownMenuButton"
+                        >
+                          <a
+                            className="dropdown-item"
+                            href="#"
+                            onClick={() => Category(GREESE)}
+                          >
+                            {GREESE}
+                          </a>
+                          <a
+                            className="dropdown-item"
+                            href="#"
+                            onClick={() => Category(LUBRICANTS)}
+                          >
+                            {LUBRICANTS}
+                          </a>
+                          <a
+                            className="dropdown-item"
+                            href="#"
+                            onClick={() => Category(ATF)}
+                          >
+                            {ATF}
+                          </a>
+                          <a
+                            className="dropdown-item"
+                            href="#"
+                            onClick={() => Category(GEAROIL)}
+                          >
+                            {GEAROIL}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="input-section">
+                      <label className="form-label">Discount:</label>
+                      <div className="dropdown">
+                        <button
+                          className="btn drop-btn dropdown-toggle w-100"
+                          type="button"
+                          id="dropdownMenuButton"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <p className="m-0 porduct-downdowns">
+                            {" "}
+                            Select Discount Mode{" "}
+                            <span> {`${discountType}`}</span>{" "}
+                          </p>
+                        </button>
+                        <div
+                          className="dropdown-menu"
+                          aria-labelledby="dropdownMenuButton"
+                        >
+                          <a
+                            className="dropdown-item"
+                            href="#"
+                            onClick={() => handleDisbale(FIXED)}
+                          >
+                            {FIXED}
+                          </a>
+                          <a
+                            className="dropdown-item"
+                            href="#"
+                            onClick={() => handleDisbale(PERCENTAGE)}
+                          >
+                            {PERCENTAGE}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="input-section" aria-disabled>
+                      <label className="form-label">Discount Price</label>
+
+                      <input
+                        disabled={discountType == PERCENTAGE}
+                        min="1"
+                        type="text"
+                        class="form-control"
+                        value={fixedValue}
+                        onChange={(e) => setFixedValue(e.target.value)}
+                      />
+                    </div>
+                    <div className="input-section">
+                      <label className="form-label">Company:</label>
+                      <Abs_Input type="text" classN="form-control" />
                     </div>
                   </div>
+                  <div className="form-submit-button">
+                    <Link to="">
+                      <Abs_Button
+                        title="Save Product"
+                        events={_handleSaveProduct}
+                      />
+                    </Link>
+                  </div>
                 </div>
-
-                <div className="input-section" aria-disabled>
-                  <label className="form-label">Discount Price</label>
-                  {getpercent ? (
-                    <input
-                      type="text"
-                      class="form-control"
-                      value={fixedValue}
-                      onChange={(e) => setFixedValue(e.target.value)}
-                    />
-                  ) : (
-                    <input type="text" class="form-control" disabled />
-                  )}
-                </div>
-                <div className="input-section">
-                  <label className="form-label">Company:</label>
-                  <Abs_Input type="text" classN="form-control" />
-                </div>
-              </div>
-              <div className="form-submit-button">
-                <Link to="">
-                  <Abs_Button
-                    title="Save Product"
-                    events={_handleSaveProduct}
-                  />
-                </Link>
-              </div>
+              </form>
             </div>
-          </form>
+            <div
+              class="tab-pane fade"
+              id="ex1-tabs-2"
+              role="tabpanel"
+              aria-labelledby="ex1-tab-2"
+            >
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">product</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Unir Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Carton Price</th>
+                    <th scope="col">Discount price</th>
+                    <th scope="col">Company</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+          {/* <!-- Tabs content --> */}
         </div>
       </section>
     </>
