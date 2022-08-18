@@ -13,6 +13,7 @@ import {
   ATF,
   GEAROIL,
 } from "../../../src/redux/consts";
+import Abs_Productlist from "../../AbstractComponent/Abs_Productlist/Abs_Productlist";
 
 const AddProduct = () => {
   function getItems() {
@@ -31,7 +32,7 @@ const AddProduct = () => {
   const [qty, setQty] = useState("");
   const [getpercent, setGetPercent] = useState(false);
   const [discountType, setDiscountType] = useState(PERCENTAGE);
-  const [company, setCompany] = useState(COMPANY);
+  const [company, setCompany] = useState("");
   const [itemCategory, setItemCategory] = useState(GREESE);
   const [fixedValue, setFixedValue] = useState();
   const [productData, setProductData] = useState(getItems());
@@ -45,14 +46,26 @@ const AddProduct = () => {
       {
         id: productData.length + 1,
         ProductName,
+        itemCategory,
         cost,
         price,
         qty,
-        carton
+        carton,
+        fixedValue,
+        company,
       },
     ];
 
     setProductData(kixxs);
+    setProductName("");
+    setItemCategory("");
+    setCost("");
+    setPrice("");
+    setQty("");
+    setCarton("");
+    setCompany("");
+    setFixedValue("");
+    // console.log(company,"<==")
   };
 
   useEffect(() => {
@@ -140,16 +153,45 @@ const AddProduct = () => {
                         classN="form-control"
                       />
                     </div>
-
                     <div className="input-section">
-                      <label className="form-label">Quantity</label>
-                      <Abs_Input
-                        changeFunc={(e) => setQty(e.target.value)}
-                        type="number"
-                        val={qty}
-                        classN="form-control"
-                      />
+                      <label className="form-label">Discount:</label>
+                      <div className="dropdown">
+                        <button
+                          className="btn drop-btn dropdown-toggle w-100"
+                          type="button"
+                          id="dropdownMenuButton"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
+                          <p className="m-0 porduct-downdowns">
+                            {" "}
+                            Select Discount Mode{" "}
+                            <span> {`${discountType}`}</span>{" "}
+                          </p>
+                        </button>
+                        <div
+                          className="dropdown-menu"
+                          aria-labelledby="dropdownMenuButton"
+                        >
+                          <a
+                            className="dropdown-item"
+                            href="#"
+                            onClick={() => handleDisbale(FIXED)}
+                          >
+                            {FIXED}
+                          </a>
+                          <a
+                            className="dropdown-item"
+                            href="#"
+                            onClick={() => handleDisbale(PERCENTAGE)}
+                          >
+                            {PERCENTAGE}
+                          </a>
+                        </div>
+                      </div>
                     </div>
+
                     <div className="input-section">
                       <label className="form-label">Carton Price</label>
                       <Abs_Input
@@ -213,42 +255,13 @@ const AddProduct = () => {
                       </div>
                     </div>
                     <div className="input-section">
-                      <label className="form-label">Discount:</label>
-                      <div className="dropdown">
-                        <button
-                          className="btn drop-btn dropdown-toggle w-100"
-                          type="button"
-                          id="dropdownMenuButton"
-                          data-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                        >
-                          <p className="m-0 porduct-downdowns">
-                            {" "}
-                            Select Discount Mode{" "}
-                            <span> {`${discountType}`}</span>{" "}
-                          </p>
-                        </button>
-                        <div
-                          className="dropdown-menu"
-                          aria-labelledby="dropdownMenuButton"
-                        >
-                          <a
-                            className="dropdown-item"
-                            href="#"
-                            onClick={() => handleDisbale(FIXED)}
-                          >
-                            {FIXED}
-                          </a>
-                          <a
-                            className="dropdown-item"
-                            href="#"
-                            onClick={() => handleDisbale(PERCENTAGE)}
-                          >
-                            {PERCENTAGE}
-                          </a>
-                        </div>
-                      </div>
+                      <label className="form-label">Quantity</label>
+                      <Abs_Input
+                        changeFunc={(e) => setQty(e.target.value)}
+                        type="number"
+                        val={qty}
+                        classN="form-control"
+                      />
                     </div>
 
                     <div className="input-section" aria-disabled>
@@ -265,7 +278,12 @@ const AddProduct = () => {
                     </div>
                     <div className="input-section">
                       <label className="form-label">Company:</label>
-                      <Abs_Input type="text" classN="form-control" />
+                      <Abs_Input
+                        type="text"
+                        classN="form-control"
+                        val={company}
+                        changeFunc={(e) => setCompany(e.target.value)}
+                      />
                     </div>
                   </div>
                   <div className="form-submit-button">
@@ -298,6 +316,25 @@ const AddProduct = () => {
                     <th scope="col">Company</th>
                   </tr>
                 </thead>
+                <tbody>
+                  {productData.map((e, idx) => (
+                    <Abs_Productlist
+                      id={e.id}
+                      ProductName={e.ProductName}
+                      itemCategory={e.itemCategory}
+                      price={e.price}
+                      qty={e.qty}
+                      carton={e.carton}
+                      fixedValue={e.fixedValue}
+                      company={e.company}
+                      pressDlt={() => {
+                        setProductData(
+                          productData.filter((ele) => ele.id !== e.id)
+                        );
+                      }}
+                    />
+                  ))}
+                </tbody>
               </table>
             </div>
           </div>

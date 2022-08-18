@@ -114,7 +114,7 @@ const Invoices = () => {
                           />
                         </td>
                       </tr>
-                      <tr>
+                      {/* <tr>
                         <td>Teritory:</td>
                         <td>
                           {" "}
@@ -132,7 +132,7 @@ const Invoices = () => {
                             className="w-100"
                           />
                         </td>
-                      </tr>
+                      </tr> */}
                     </tbody>
                   </table>
                 </div>
@@ -165,7 +165,8 @@ const Invoices = () => {
                       <td>Price List Ref #</td>
                       <td>
                         <input
-                          type="text"
+                          readOnly
+                          type="number"
                           className="w-100"
                           value={ref}
                           onChange={(e) => setDate(e.target.value)}
@@ -224,21 +225,7 @@ const Invoices = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {/* {_getData().map((e, idx) => (
-                      <Table_Row
-                        key={idx}
-                        id={e.id}
-                        productsName={e.ProductName}
-                        unitcost={e.cost}
-                        unitprice={e.price}
-                        qty={e.qty}
-                        pressDlt={() => {
-                          setTableData(
-                            tableData.filter((ele) => ele.id !== e.id)
-                          );
-                        }}
-                      />
-                    ))} */}
+                
                   </tbody>
                   <tr>
                     <td></td>

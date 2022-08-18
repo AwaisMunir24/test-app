@@ -29,6 +29,9 @@ const Company = () => {
       },
     ];
     setCompDetail(newComp);
+    setName("");
+    setDetail("");
+    setDate("");
   };
   useEffect(() => {
     localStorage.setItem("compDetail", JSON.stringify(compDetail));

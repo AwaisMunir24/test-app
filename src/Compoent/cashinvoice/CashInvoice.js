@@ -14,6 +14,7 @@ const CashInvoices = () => {
   const [date, setDate] = useState();
   const [value, setValue] = useState("Dummy Text Added");
   const [totalamount,setTotalAmount]=useState("xyz");
+  const [cashRef,setCashRef]=useState("");
   function getItems() {
     const item = localStorage.getItem("productData");
 
@@ -131,6 +132,17 @@ const CashInvoices = () => {
                           value={date}
                           onChange={(e) => setDate(e.target.value)}
                         />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Price List Ref #</td>
+                      <td>
+                      <input
+                          readOnly
+                          type="number"
+                          className="w-100"
+                          value={cashRef}
+                      />
                       </td>
                     </tr>
                   </tbody>

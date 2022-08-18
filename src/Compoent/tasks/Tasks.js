@@ -33,6 +33,10 @@ const Tasks = () => {
       },
     ];
     setList(newList);
+    setTask("");
+    setDetail("");
+    setStartDate("");
+    setEndDate("");
   };
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list));

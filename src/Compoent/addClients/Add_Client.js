@@ -32,6 +32,10 @@ const AddClient = () => {
       },
     ];
     setUserData(Clients);
+    setClientName("");
+    setNumber("");
+    setAddress("");
+    setShop("");
   };
   useEffect(() => {
     localStorage.setItem("userData", JSON.stringify(userData));

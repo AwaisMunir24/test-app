@@ -1,14 +1,16 @@
 .main-container {
-  
+
     padding-top: 25px;
-        /* overflow: hidden; */
-        width: 100%;
-        height: auto;
+    /* overflow: hidden; */
+    width: 100%;
+    height: auto;
 
 }
+
 .topspace-90 {
     min-height: 100vh;
 }
+
 .sidebar-toggle.sssss {
     left: 12px;
     position: fixed;
@@ -16,25 +18,46 @@
     z-index: 100000000000000000000;
     left: 20px;
 }
-.logo-img{
+
+.logo-img {
     width: 200px;
     height: 60px;
 }
-section{
+
+section {
     /* height: 100vh; */
     padding-top: 28px;
 }
-.addclient,.addproductsection ,.task-section ,.login-bg , .company-section  {
-height: 100vh !important;
-overflow: scroll;
-}
-.form-control:focus , .dropdown-toggle:focus {
-    border-color: #777777 !important;
-    
-  }
-.dropdown-toggle:focus {
-    box-shadow: 1px 0px 0px 0px rgba(119,119,119,0.75) !important;
-    -webkit-box-shadow: 1px 0px 0px 0px rgba(119,119,119,0.75);
-    -moz-box-shadow: 1px 0px 0px 0px rgba(119,119,119,0.75);
 
+.addclient,
+.addproductsection,
+.task-section,
+.login-bg,
+.company-section ,
+.first-expense-section,
+.first-pricelist-section{
+    height: 100vh !important;
+    overflow: scroll;
+}
+
+.form-control:focus,
+.dropdown-toggle:focus {
+    border-color: #777777 !important;
+
+}
+
+.dropdown-toggle:focus {
+    box-shadow: 1px 0px 0px 0px rgba(119, 119, 119, 0.75) !important;
+    -webkit-box-shadow: 1px 0px 0px 0px rgba(119, 119, 119, 0.75);
+    -moz-box-shadow: 1px 0px 0px 0px rgba(119, 119, 119, 0.75);
+
+}
+
+.addproductsection .nav-tabs .nav-link,
+.addclient .nav-tabs .nav-link,
+.task-section .nav-tabs .nav-link,
+.company-section .nav-tabs .nav-link ,
+.first-pricelist-section .nav-tabs .nav-link{
+    border: none !important;
+    margin-bottom: 0 !important;
 }
