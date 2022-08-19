@@ -212,21 +212,7 @@ const Quotation = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {_getData().map((e, idx) => (
-                      <Table_Row
-                        key={idx}
-                        id={e.id}
-                        productsName={e.ProductName}
-                        unitcost={e.cost}
-                        unitprice={e.price}
-                        qty={e.qty}
-                        pressDlt={() => {
-                          setTableData(
-                            tableData.filter((ele) => ele.id !== e.id)
-                          );
-                        }}
-                      />
-                    ))}
+                    
                   </tbody>
                   <tr>
                     <td></td>

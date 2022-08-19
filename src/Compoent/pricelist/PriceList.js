@@ -26,7 +26,7 @@ const PriceList = () => {
             <div className="row heading-row sales-section justify-content-center">
               <div className="col-lg-12 text-center ">
                 <Abs_Heading heading="Price List" />
-                <p> REF # {ref}</p>
+                {/* <p> REF # {ref}</p> */}
               </div>
             </div>
             {/* <!-- Tabs navs --> */}
@@ -41,7 +41,7 @@ const PriceList = () => {
                   aria-controls="ex1-tabs-1"
                   aria-selected="true"
                 >
-                  Price List 1
+                  NEW
                 </a>
               </li>
               <li class="nav-item" role="presentation">
@@ -54,7 +54,7 @@ const PriceList = () => {
                   aria-controls="ex1-tabs-2"
                   aria-selected="false"
                 >
-                  Price List 2
+                  CURRENT REF # 1
                 </a>
               </li>
               <li class="nav-item" role="presentation">
@@ -67,7 +67,7 @@ const PriceList = () => {
                   aria-controls="ex1-tabs-3"
                   aria-selected="false"
                 >
-                  Price List 3
+                  OLD LISTS
                 </a>
               </li>
             </ul>
