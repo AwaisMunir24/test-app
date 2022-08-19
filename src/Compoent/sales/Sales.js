@@ -216,6 +216,11 @@ const Sales = () => {
                       setChecked= {setChecked}
                       setListReturn={setListReturn}
                       listReturn={listReturn}
+                      // handleDlt={() => {
+                      //   setReturnSale(
+                      //     returnSale.filter((ele) => ele.id !== e.id)
+                      //   );
+                      // }}
                       // pressDlt={() => {
                       //   setList(
                       //     list.filter((ele) => ele.id !== e.id)
@@ -255,12 +260,13 @@ const Sales = () => {
                     {
                       listReturn.map((e,idx)=>(
                      
-                          <tr>
+                          <tr key={idx}>
                             <td>{e.id}</td>
                             <td>{e.itemCode}</td>
                             <td>{e.quantity}</td>
                             <td>{e.rate}</td>
                             <td>{e.amount}</td>
+                           
                           </tr>
                       
                       ))

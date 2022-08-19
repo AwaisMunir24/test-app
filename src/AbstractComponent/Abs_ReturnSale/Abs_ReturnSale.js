@@ -1,30 +1,52 @@
 import React, { Component, useState } from "react";
 import Abs_Input from "../Abs_input/Abs_input";
 const Abs_ReturnSale = (props) => {
-  const { id, itemCode, quantity, rate, amount, pressDlt, checked , returnSale, setChecked,setListReturn,listReturn} = props;
+  const {
+    id,
+    itemCode,
+    quantity,
+    rate,
+    amount,
+    pressDlt,
+    checked,
+    returnSale,
+    setChecked,
+    setListReturn,
+    
+    listReturn,
+    handleDlt,
+  } = props;
 
-  const [againCheck, setAgainCheck]= useState(checked);
-  
+  const [againCheck, setAgainCheck] = useState(checked);
 
   const markcheck = (id) => {
-     const abc =  returnSale.find((element)=> element.id == id);
-    //    console.log(abc.id)
-    const alfa= [...listReturn,abc]
+    const abc = returnSale.find((element) => element.id == id);
+
+    const alfa = [...listReturn, abc];
     setListReturn(alfa);
     console.log(alfa);
-    if(abc.id == id) {
-        setAgainCheck(!againCheck)
+    if (abc.id == id) {
+      setAgainCheck(!againCheck);
     }
-};
+  };
+  const dltEvent = (id) => {
+    const dragon = returnSale.find((element) => element.id == id);
+    // console.log(id);
+    if (dragon.id == id) {
+        setAgainCheck(!againCheck);
+      }
+    const abc = listReturn.filter((element) => element.id != id);
+   
+   setListReturn(abc);
 
-    
-
+  
+  };
   return (
     <>
       <tr>
         <td>
-          { againCheck? (
-            <i className="fa-solid fa-minus" onClick={() => markcheck(id)}></i>
+          {againCheck ? (
+            <i className="fa-solid fa-minus" onClick={() => dltEvent(id)}></i>
           ) : (
             <i className="fa-solid fa-check" onClick={() => markcheck(id)}></i>
           )}{" "}
