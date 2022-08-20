@@ -12,7 +12,7 @@ const Abs_ReturnSale = (props) => {
     returnSale,
     setChecked,
     setListReturn,
-    
+
     listReturn,
     handleDlt,
   } = props;
@@ -33,13 +33,11 @@ const Abs_ReturnSale = (props) => {
     const dragon = returnSale.find((element) => element.id == id);
     // console.log(id);
     if (dragon.id == id) {
-        setAgainCheck(!againCheck);
-      }
+      setAgainCheck(!againCheck);
+    }
     const abc = listReturn.filter((element) => element.id != id);
-   
-   setListReturn(abc);
 
-  
+    setListReturn(abc);
   };
   return (
     <>

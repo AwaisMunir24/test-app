@@ -57,6 +57,13 @@ width: 100%;
 .addproductsection .table{
     background:white;
 }
+.productlisttable{
+   
+    background:#F1F1F1;
+}
+.productlisttable td{
+    padding:30px !important;
+}
 
 
 @media screen and (max-width: 992px) {

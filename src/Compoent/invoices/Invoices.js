@@ -13,7 +13,7 @@ const Invoices = () => {
   const [invoice, setInvoice] = useState();
   const [date, setDate] = useState();
   const [value, setValue] = useState("Dummy Text Added");
-  const [ref,useRef]=useState();
+  const [ref,useRef]=useState("123");
   function getItems() {
     const item = localStorage.getItem("productData");
 
@@ -164,13 +164,8 @@ const Invoices = () => {
                     <tr>
                       <td>Price List Ref #</td>
                       <td>
-                        <input
-                          readOnly
-                          type="number"
-                          className="w-100"
-                          value={ref}
-                          onChange={(e) => setDate(e.target.value)}
-                        />
+                        {ref}
+                      
                       </td>
                     </tr>
                   </tbody>

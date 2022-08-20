@@ -14,7 +14,7 @@ const CashInvoices = () => {
   const [date, setDate] = useState();
   const [value, setValue] = useState("Dummy Text Added");
   const [totalamount,setTotalAmount]=useState("xyz");
-  const [cashRef,setCashRef]=useState("");
+  const [cashRef,setCashRef]=useState("123");
   function getItems() {
     const item = localStorage.getItem("productData");
 
@@ -137,12 +137,13 @@ const CashInvoices = () => {
                     <tr>
                       <td>Price List Ref #</td>
                       <td>
-                      <input
+                        {cashRef}
+                      {/* <input
                           readOnly
                           type="number"
                           className="w-100"
                           value={cashRef}
-                      />
+                      /> */}
                       </td>
                     </tr>
                   </tbody>
@@ -165,7 +166,15 @@ const CashInvoices = () => {
                       <th>Total</th>
                     </tr>
                   </thead>
-                  <tbody></tbody>
+                  <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Kixxs Oil</td>
+                        <td>10</td>
+                        <td>100</td>
+                        <td>2000</td>
+                      </tr>
+                  </tbody>
                 </table>
               </div>
             </div>

@@ -33,11 +33,10 @@ section {
 .addproductsection,
 .task-section,
 .login-bg,
-.company-section ,
+.company-section,
 .first-expense-section,
 .first-pricelist-section,
-.first-sales-section
-{
+.first-sales-section {
     height: 100vh !important;
     overflow: scroll;
 }
@@ -46,6 +45,10 @@ section {
 .dropdown-toggle:focus {
     border-color: #777777 !important;
 
+}
+
+button#dropdownMenuButton {
+    box-shadow: none !important;
 }
 
 .dropdown-toggle:focus {
@@ -58,8 +61,8 @@ section {
 .addproductsection .nav-tabs .nav-link,
 .addclient .nav-tabs .nav-link,
 .task-section .nav-tabs .nav-link,
-.company-section .nav-tabs .nav-link ,
-.first-pricelist-section .nav-tabs .nav-link{
+.company-section .nav-tabs .nav-link,
+.first-pricelist-section .nav-tabs .nav-link {
     border: none !important;
     margin-bottom: 0 !important;
 }
