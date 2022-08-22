@@ -60,9 +60,16 @@ width: 100%;
 .productlisttable{
    
     background:#F1F1F1;
+    
 }
 .productlisttable td{
     padding:30px !important;
+}
+.productlisttable .row{
+    border:1px solid red;
+    border-radius: 20px;
+    background: wheat;
+    padding:20px;
 }
 
 

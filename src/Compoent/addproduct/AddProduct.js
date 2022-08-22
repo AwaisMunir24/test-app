@@ -1,8 +1,5 @@
 import React, { Component, useEffect, useState } from "react";
 import "./AddProduct.css";
-import Abs_Button from "../../AbstractComponent/Abs_Button/Abs_Button";
-import { Link } from "react-router-dom";
-import Abs_Input from "../../AbstractComponent/Abs_input/Abs_input";
 import Abs_Heading from "../../AbstractComponent/Abs_Heading/Abs_Heading";
 import {
   PERCENTAGE,
@@ -35,33 +32,33 @@ const AddProduct = () => {
   const [editingId, setEditingId] = useState("");
 
   console.log("=>", productData);
-  const _handleSaveProduct = (e) => {
-    const kixxs = [
-      ...productData,
-      {
-        id: productData.length + 1,
-        ProductName,
-        itemCategory,
-        cost,
-        price,
-        qty,
-        carton,
-        fixedValue,
-        company,
-      },
-    ];
+  // const _handleSaveProduct = (e) => {
+  //   const kixxs = [
+  //     ...productData,
+  //     {
+  //       id: productData.length + 1,
+  //       ProductName,
+  //       itemCategory,
+  //       cost,
+  //       price,
+  //       qty,
+  //       carton,
+  //       fixedValue,
+  //       company,
+  //     },
+  //   ];
 
-    setProductData(kixxs);
-    setProductName("");
-    setItemCategory("");
-    setCost("");
-    setPrice("");
-    setQty("");
-    setCarton("");
-    setCompany("");
-    setFixedValue("");
-    // console.log(company,"<==")
-  };
+  //   setProductData(kixxs);
+  //   setProductName("");
+  //   setItemCategory("");
+  //   setCost("");
+  //   setPrice("");
+  //   setQty("");
+  //   setCarton("");
+  //   setCompany("");
+  //   setFixedValue("");
+  //   // console.log(company,"<==")
+  // };
 
   useEffect(() => {
     lsSetItem(LS_PRODUCT_DATA, productData);
@@ -152,8 +149,8 @@ const AddProduct = () => {
                   {productData.map((e, idx) => {
                     if (e.id == editingId) {
                       return (
-                        <tr className="productlisttable">
-                          <td colSpan={9}>
+                        <tr className="productlisttable" data-aos="fade-up">
+                          <td colSpan={10}>
                             <ProductForm
                               updateData={(data) => {
                                 console.log("update data");

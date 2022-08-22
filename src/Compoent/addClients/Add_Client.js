@@ -1,10 +1,10 @@
 import React, { Component, useEffect, useState } from "react";
 import "./Add_Client.css";
-import Abs_Input from "../../AbstractComponent/Abs_input/Abs_input";
-import Abs_Button from "../../AbstractComponent/Abs_Button/Abs_Button";
-import { Link } from "react-router-dom";
 import Abs_Heading from "../../AbstractComponent/Abs_Heading/Abs_Heading";
 import Abs_ClientList from "../../AbstractComponent/Abs_ClientList/Abs_ClientList";
+import ClientForm from "../clients/ClientForm";
+import { lsGetItem, lsSetItem } from "../../utils/helpers";
+import { LS_CLIENT_DATA } from "../../redux/consts";
 const AddClient = () => {
   function getUsers() {
     const users = localStorage.getItem("userData");
@@ -15,30 +15,12 @@ const AddClient = () => {
     }
   }
 
-  const [clientName, setClientName] = useState("");
-  const [number, setNumber] = useState("");
-  const [address, setAddress] = useState("");
-  const [shop, setShop] = useState("");
-  const [userData, setUserData] = useState(getUsers());
-  const SaveClient = () => {
-    const Clients = [
-      ...userData,
-      {
-        id: userData.length + 1,
-        clientName,
-        number,
-        address,
-        shop,
-      },
-    ];
-    setUserData(Clients);
-    setClientName("");
-    setNumber("");
-    setAddress("");
-    setShop("");
-  };
+  const [userData, setUserData] = useState(lsGetItem(LS_CLIENT_DATA));
+
+  const [editId, setEditId] = useState("");
+
   useEffect(() => {
-    localStorage.setItem("userData", JSON.stringify(userData));
+    lsSetItem(LS_CLIENT_DATA, userData);
   }, [userData]);
 
   return (
@@ -92,55 +74,7 @@ const AddClient = () => {
               role="tabpanel"
               aria-labelledby="home-tab0"
             >
-              <form>
-                <div className="row">
-                  <div className="col-lg-6 col-md-6 col-sm-12">
-                    <div>
-                      <label className="form-label">Client Name</label>
-                      <Abs_Input
-                        changeFunc={(e) => setClientName(e.target.value)}
-                        type="text"
-                        val={clientName}
-                        classN="form-control"
-                      />
-                    </div>
-                    <div className="input-section">
-                      <label className="form-label">Address</label>
-                      <Abs_Input
-                        changeFunc={(e) => setAddress(e.target.value)}
-                        type="text"
-                        val={address}
-                        classN="form-control"
-                      />
-                    </div>
-                  </div>
-                  <div className="col-lg-6 col-md-6 col-sm-12">
-                    <div>
-                      <label className="form-label">Number</label>
-                      <Abs_Input
-                        changeFunc={(e) => setNumber(e.target.value)}
-                        type="number"
-                        val={number}
-                        classN="form-control"
-                      />
-                    </div>
-                    <div className="input-section">
-                      <label className="form-label">Shop Name:</label>
-                      <Abs_Input
-                        changeFunc={(e) => setShop(e.target.value)}
-                        type="text"
-                        val={shop}
-                        classN="form-control"
-                      />
-                    </div>
-                  </div>
-                  <div className="form-submit-button">
-                    <Link to="">
-                      <Abs_Button title="Save Client" events={SaveClient} />
-                    </Link>
-                  </div>
-                </div>
-              </form>
+              <ClientForm updateClient={(data) => setUserData(data)} />
             </div>
             <div
               class="tab-pane fade"
@@ -158,19 +92,35 @@ const AddClient = () => {
                     <th scope="col">Number</th>
                   </tr>
                 </thead>
-                {
-                  userData.map((e,idx)=>(
+                <tbody>
+                  {userData.map((e, idx) => {
+                    if (e.id == editId) {
+                      return (
+                        <tr className="clientsListTable" data-aos="fade-up">
+                          <td colSpan={6}>
+                            <ClientForm
+                              updateClient={(data) => {
+                                setEditId("");
+                              }}
+                            />
+                          </td>
+                        </tr>
+                      );
+                    } else {
+                      return (
                         <Abs_ClientList
-                        key={idx}
-                        id={e.id}
-                        clientName={e.clientName}
-                        number={e.number}
-                        address={e.address}
-                        shop={e.shop}
-                        
+                          key={idx}
+                          id={e.id}
+                          clientName={e.clientName}
+                          number={e.number}
+                          address={e.address}
+                          shop={e.shop}
+                          editPress={() => setEditId(e.id)}
                         />
-                        ))
-                }
+                      );
+                    }
+                  })}
+                </tbody>
               </table>
             </div>
           </div>

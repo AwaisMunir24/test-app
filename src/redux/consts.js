@@ -12,6 +12,11 @@ const GEAROIL="GEAROIL";
 
 // local storage 
 const LS_PRODUCT_DATA = 'productData';
+const LS_CLIENT_DATA = 'userData';
+const LS_TASK_DATA = 'list';
+const LS_COMPANY_DATA = 'compDetail';
+
+
 
 
 
@@ -20,5 +25,5 @@ const LS_PRODUCT_DATA = 'productData';
 export  {
     PERCENTAGE,FIXED,COMPANY,CASH,BANK,GREESE,LUBRICANTS,ATF,GEAROIL, 
 
-    LS_PRODUCT_DATA
+    LS_PRODUCT_DATA,LS_CLIENT_DATA,LS_TASK_DATA,LS_COMPANY_DATA
 }
