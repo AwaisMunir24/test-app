@@ -11,8 +11,9 @@ const ClientForm = ({ updateClient }) => {
   const [address, setAddress] = useState("");
   const [shop, setShop] = useState("");
   const [userData, setUserData] = useState(lsGetItem(LS_CLIENT_DATA));
-
-  const SaveClient = () => {
+  const [message, setMessage] = useState(false);
+  const onSubmitClientHandler = (e) => {
+    e.preventDefault();
     const Clients = [
       ...userData,
       {
@@ -23,20 +24,51 @@ const ClientForm = ({ updateClient }) => {
         shop,
       },
     ];
-   
-    setClientName("");
-    setNumber("");
-    setAddress("");
-    setShop("");
-    updateClient(Clients);
+    if (clientName == "" || number == "" || address == "" || shop == "") {
+      setMessage(true);
+    } else {
+      setMessage(false);
+      updateClient(Clients);
+      setClientName("");
+      setNumber("");
+      setAddress("");
+      setShop("");
+    }
+  };
+  const SaveClient = () => {
+    // const Clients = [
+    //   ...userData,
+    //   {
+    //     id: userData.length + 1,
+    //     clientName,
+    //     number,
+    //     address,
+    //     shop,
+    //   },
+    // ];
+    // if (clientName == "" || number == "" || address == "" || shop=="") {
+    //   setMessage(true);
+    // } else {
+    //   setMessage(false);
+    //     updateClient(Clients);
+    //   setClientName("");
+    //   setNumber("");
+    //   setAddress("");
+    //   setShop("")
+    // }
+    // setClientName("");
+    // setNumber("");
+    // setAddress("");
+    // setShop("");
+    // updateClient(Clients);
   };
 
   return (
     <>
-      <form>
+      <form onSubmit={onSubmitClientHandler}>
         <div className="row">
           <div className="col-lg-6 col-md-6 col-sm-12">
-            <div>
+            <div className="client-info-box">
               <label className="form-label">Client Name</label>
               <Abs_Input
                 changeFunc={(e) => setClientName(e.target.value)}
@@ -44,8 +76,11 @@ const ClientForm = ({ updateClient }) => {
                 val={clientName}
                 classN="form-control"
               />
+              {message && !clientName && (
+                <p className="m-0 Data clients">Please Enter Client Name</p>
+              )}
             </div>
-            <div className="input-section">
+            <div className="input-section client-info-box2">
               <label className="form-label">Address</label>
               <Abs_Input
                 changeFunc={(e) => setAddress(e.target.value)}
@@ -53,10 +88,13 @@ const ClientForm = ({ updateClient }) => {
                 val={address}
                 classN="form-control"
               />
+              {message && !address && (
+                <p className="m-0 Data clients2">Please Enter Address</p>
+              )}
             </div>
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12">
-            <div>
+            <div className="client-info-box3">
               <label className="form-label">Number</label>
               <Abs_Input
                 changeFunc={(e) => setNumber(e.target.value)}
@@ -64,8 +102,11 @@ const ClientForm = ({ updateClient }) => {
                 val={number}
                 classN="form-control"
               />
+              {message && !number && (
+                <p className="m-0 Data clients3">Please Enter Number</p>
+              )}
             </div>
-            <div className="input-section">
+            <div className="input-section client-info-box4">
               <label className="form-label">Shop Name:</label>
               <Abs_Input
                 changeFunc={(e) => setShop(e.target.value)}
@@ -73,12 +114,13 @@ const ClientForm = ({ updateClient }) => {
                 val={shop}
                 classN="form-control"
               />
+              {message && !shop && (
+                <p className="m-0 Data clients4">Please Enter Shop Name</p>
+              )}
             </div>
           </div>
           <div className="form-submit-button">
-            <Link to="">
-              <Abs_Button title="Save Client" events={SaveClient} />
-            </Link>
+            <Abs_Button title="Save Client" />
           </div>
         </div>
       </form>

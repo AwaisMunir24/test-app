@@ -11,3 +11,12 @@
 .addclient .table th{
     background: white;
 }
+.client-info-box ,.client-info-box2, .client-info-box3, .client-info-box4 {
+    position: relative;
+
+}
+.addclient .clients ,.addclient .clients3 {
+    position: absolute;
+    top: 70px;
+    left: 5px;
+}

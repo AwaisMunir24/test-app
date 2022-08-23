@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 const Abs_Expenselist=(props)=>{
-    const{id,expDate,expenseTitle,amount,expenseDetail,pressDlt}=props;
+    const{id,expDate,expenseTitle,amount,expenseDetail,pressDlt,editPress}=props;
     return(
         <>
         <tr>
@@ -10,6 +10,7 @@ const Abs_Expenselist=(props)=>{
             <td>{amount}</td>
             <td>{expenseDetail}</td>
             <td><i className="fa-solid fa-circle-minus" onClick={pressDlt}></i></td>
+            <td><i className="fa-solid fa-file-pen" onClick={editPress}></i></td>
         </tr>
         </>
     )

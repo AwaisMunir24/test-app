@@ -74,7 +74,7 @@ export const MenuData = [
       id: 9,
       name: "Expenses",
       classname: "nav-link",
-      icon:<i className="fa-solid fa-money-bill"></i>,
+      icon:<i className="fa-solid fa-scale-unbalanced-flip"></i>,
       path: "expense",
     },
     {
@@ -83,6 +83,13 @@ export const MenuData = [
       className:"nav-link",
       icon:<i className="fa-solid fa-clipboard-list"></i>,
       path:"picelist"
+    },
+    {
+      id:12,
+      name:"Stock",
+      className:"nav-link",
+      icon:<i className="fa-solid fa-boxes-stacked"></i>,
+      path:"stock"
     },
    
  

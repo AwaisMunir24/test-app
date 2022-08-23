@@ -128,6 +128,7 @@ const Sales = () => {
                 aria-labelledby="ex1-tab-2"
               >
                 {/* sales return customer and invoice section starts here*/}
+                
                 <h5>Customer Current Invoice</h5>
                 <table className="table table-bordered">
                   <tbody>
@@ -167,43 +168,7 @@ const Sales = () => {
                   </thead>
                   <tbody>
                     {returnSale.map((e, idx) => (
-                      // <tr>
-                      //   <td>{e.id}</td>
-                      //   <td>
-                      //     <Abs_Input
-                      //       val={e.itemCode}
-                      //       changeFunc={() => onchangeFunciotn(e.id)}
-                      //     />
-                      //   </td>
-                      //   <td>
-                      //     <Abs_Input
-                      //       val={e.quantity}
-                      //       changeFunc={(value) =>
-                      //         setQuantity(value.target.value)
-                      //       }
-                      //     />
-                      //   </td>
-                      //   <td>
-                      //     <Abs_Input
-                      //       val={e.rate}
-                      //       changeFunc={(value) => setRate(value.target.value)}
-                      //     />
-                      //   </td>
-                      //   <td>
-                      //     <Abs_Input
-                      //       val={e.amount}
-                      //       changeFunc={(value) =>
-                      //         setAmount(value.target.value)
-                      //       }
-                      //     />
-                      //   </td>
-                      //   <td>
-                      //     <i className="fa-solid fa-circle-minus "></i>
-                      //     <i className="fa-solid fa-plus"></i>
-                      //   </td>
-                      // </tr>
-
-                      <Abs_ReturnSale
+                     <Abs_ReturnSale
                       key={idx}
                       returnSale={returnSale}
                       markcheck={markcheck}

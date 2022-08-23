@@ -4,18 +4,48 @@ import Abs_Button from "../../AbstractComponent/Abs_Button/Abs_Button";
 import Abs_Input from "../../AbstractComponent/Abs_input/Abs_input";
 import { LS_COMPANY_DATA } from "../../redux/consts";
 import { lsGetItem, lsSetItem } from "../../utils/helpers";
-const CompaniesForm = ({updateCompany}) => {
+const CompaniesForm = ({ updateCompany }) => {
   const [name, setName] = useState("");
   const [detail, setDetail] = useState("");
   const [date, setDate] = useState("");
   const [compDetail, setCompDetail] = useState(lsGetItem(LS_COMPANY_DATA));
 
+  const [message, setMessage] = useState(false);
 
   useEffect(() => {
-    lsSetItem(LS_COMPANY_DATA,compDetail);
-   }, [compDetail]);
-   
-  const handleCompany = () => {
+    lsSetItem(LS_COMPANY_DATA, compDetail);
+  }, [compDetail]);
+
+  // const handleCompany = () => {
+  //   const newComp = [
+  //     ...compDetail,
+  //     {
+  //       id: compDetail.length + 1,
+  //       date,
+  //       name,
+  //       detail,
+  //     },
+  //   ];
+
+  //   // if(date == ""){
+  //   //   setMessage(true)
+  //   //   updateCompany(newComp);
+
+  //   // } else{
+  //   //   setMessage(false)
+  //   //   updateCompany(newComp);
+  //   // }
+
+  //   updateCompany(newComp);
+
+  //   setName("");
+  //   setDetail("");
+  //   setDate("");
+  // };
+
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+
     const newComp = [
       ...compDetail,
       {
@@ -25,52 +55,73 @@ const CompaniesForm = ({updateCompany}) => {
         detail,
       },
     ];
-   
-    setName("");
-    setDetail("");
-    setDate("");
 
-    updateCompany(newComp);
+    if (date == "" || name == "" || compDetail == "") {
+      setMessage(true);
+    } else {
+      setMessage(false);
+      updateCompany(newComp);
+
+      setName("");
+      setDetail("");
+      setDate("");
+    }
+
+    // updateCompany(newComp);
   };
-
   return (
     <>
-      <div className="row justify-content-center text-end">
-        <div className="col-lg-3 text-start d-flex">
-          <span>Date: </span>
-          <Abs_Input
-            val={date}
-            changeFunc={(e) => setDate(e.target.value)}
-            type="date"
-            placeholder="Enter the Task Title"
-            classN="w-75 mb-2"
-          />
-        </div>
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="d-flex flex-column justify-content-center align-items-center">
+      <form onSubmit={onSubmitHandler}>
+        <div className="row justify-content-center text-end">
+          <div className="col-lg-3 text-start d-flex flex-column">
+            <div>
+              <span>Date: </span>
               <Abs_Input
-                type="text"
-                classN="w-50 mb-3 form-control"
-                placeholder="Enter the Company Name"
-                val={name}
-                changeFunc={(e) => setName(e.target.value)}
+                val={date}
+                changeFunc={(e) => setDate(e.target.value)}
+                type="date"
+                placeholder="Enter the Task Title"
+                classN="w-75 mb-1"
               />
-              <textarea
-                className="form-control mb-4 w-50"
-                rows="4"
-                placeholder="Enter the Company Discription"
-                value={detail}
-                onChange={(e) => setDetail(e.target.value)}
-              ></textarea>
-              <Link to=''>
+            </div>
+            <div className="text-center">
+              {" "}
+              {message && !date && (
+                <p className="m-0 Data ">Please Enter Date</p>
+              )}
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-lg-12 col-md-12">
+              <div className="d-flex flex-column justify-content-center align-items-center comp_detail_section">
+                <Abs_Input
+                  type="text"
+                  classN="w-50 mt-3 form-control"
+                  placeholder="Enter the Company Name"
+                  val={name}
+                  changeFunc={(e) => setName(e.target.value)}
+                />
+                {message && !name && (
+                  <p className="m-0 Data">Please Enter Company Name</p>
+                )}
 
-              <Abs_Button title="Save" events={handleCompany} />
-              </Link>
+                <textarea
+                  className="form-control mt-2 pb-2 w-50"
+                  rows="4"
+                  placeholder="Enter the Company Discription"
+                  value={detail}
+                  onChange={(e) => setDetail(e.target.value)}
+                ></textarea>
+
+                {message && !detail && (
+                  <p className="m-0 Data">Please Enter Company Detail</p>
+                )}
+                <Abs_Button className="pt-2" title="Save" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </form>
     </>
   );
 };

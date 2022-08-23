@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Abs_Button.css';
 
 const Abs_Button=(props)=>{
-const {title,events,changeValue}=props;
+const {title,events,changeValue, buttonHide}=props;
     return(
 
         <>

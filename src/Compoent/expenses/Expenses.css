@@ -16,3 +16,26 @@ table th{
 .expneses table{
     background: white;
 }
+.expss_date , .exp_detail_error_section{
+    position: relative;
+}
+.exp_Error_msg{
+    position: absolute;
+    top: 32px;
+    left: 23px;
+}
+.exp_Error_msg2{
+    position: absolute;
+    top: 7px;
+    right: 26%;
+}
+.exp_Error_msg3{
+    position: absolute;
+    top: 50px;
+    right: 26%;
+}
+.exp_Error_msg4{
+    position: absolute;
+    top: 100px;
+    right: 26%;
+}

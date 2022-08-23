@@ -38,7 +38,7 @@ section {
 .first-pricelist-section,
 .first-sales-section {
     height: 100vh !important;
-    overflow: scroll;
+    overflow-x: scroll;
 }
 
 .form-control:focus,
@@ -67,12 +67,12 @@ button#dropdownMenuButton {
     margin-bottom: 0 !important;
 }
 
-.productlisttable td ,.companyListTable td , .clientsListTable td , .taskListsTable td{
+.productlisttable td ,.companyListTable td , .clientsListTable td , .taskListsTable td , .expense_tabless td{
     padding:30px !important;
 }
 
 
-.productlisttable .row  , .companyListTable  .row , .taskListsTable .row , .clientsListTable .row {
+.productlisttable .row  , .companyListTable  .row , .taskListsTable .row , .clientsListTable .row , .expense_tabless .row{
     border:1px solid red;
     border-radius: 20px;
     background: wheat;

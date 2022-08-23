@@ -31,7 +31,6 @@ const AddProduct = () => {
 
   const [editingId, setEditingId] = useState("");
 
-  console.log("=>", productData);
   // const _handleSaveProduct = (e) => {
   //   const kixxs = [
   //     ...productData,
@@ -165,6 +164,7 @@ const AddProduct = () => {
                       return (
                         <Abs_Productlist
                           id={e.id}
+                          key={idx}
                           ProductName={e.ProductName}
                           itemCategory={e.itemCategory}
                           price={e.price}

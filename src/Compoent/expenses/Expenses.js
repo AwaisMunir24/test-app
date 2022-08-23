@@ -1,43 +1,36 @@
 import React, { Component, useState, useEffect } from "react";
 import Abs_Heading from "../../AbstractComponent/Abs_Heading/Abs_Heading";
-import Abs_Input from "../../AbstractComponent/Abs_input/Abs_input";
-import Abs_Button from "../../AbstractComponent/Abs_Button/Abs_Button";
 import "./Expenses.css";
 import Abs_Expenselist from "../../AbstractComponent/Abs_Expenselist/Abs_Expenselist";
+import ExpenseForm from "../expnese/ExpenseForm";
+import { LS_EXPENSE_DATA } from "../../redux/consts";
+import { lsGetItem, lsSetItem } from "../../utils/helpers";
 const Expenses = () => {
-  function getExpense() {
-    const item = localStorage.getItem("expense");
-
-    if (item) {
-      return JSON.parse(localStorage.getItem("expense"));
-    } else {
-      return [];
-    }
-  }
   const [expenseTitle, setExpenseTitle] = useState("");
   const [expenseDetail, setExpenseDetail] = useState("");
   const [expDate, setExpDate] = useState("");
   const [amount, setAmount] = useState("");
-  const [expense, setExpense] = useState(getExpense());
-  const handleExpense = (e) => {
-    const newExpense = [
-      ...expense,
-      {
-        id: expense.length + 1,
-        expDate,
-        expenseTitle,
-        amount,
-        expenseDetail,
-      },
-    ];
-    setExpense(newExpense);
-    setExpDate("");
-    setExpenseTitle("");
-    setExpenseDetail("");
-    setAmount("");
-  };
+  const [expense, setExpense] = useState(lsGetItem(LS_EXPENSE_DATA));
+  const [expenseId, setExpenseId] = useState("");
+  // const handleExpense = (e) => {
+  //   const newExpense = [
+  //     ...expense,
+  //     {
+  //       id: expense.length + 1,
+  //       expDate,
+  //       expenseTitle,
+  //       amount,
+  //       expenseDetail,
+  //     },
+  //   ];
+  //   setExpense(newExpense);
+  //   setExpDate("");
+  //   setExpenseTitle("");
+  //   setExpenseDetail("");
+  //   setAmount("");
+  // };
   useEffect(() => {
-    localStorage.setItem("expense", JSON.stringify(expense));
+    lsSetItem(LS_EXPENSE_DATA, expense);
   }, [expense]);
   return (
     <>
@@ -87,46 +80,7 @@ const Expenses = () => {
                 role="tabpanel"
                 aria-labelledby="ex1-tab-1"
               >
-                <div className="row justify-content-center text-end">
-                  <div className="col-lg-3">
-                    <span>Date</span>
-                    <Abs_Input
-                      val={expDate}
-                      changeFunc={(e) => setExpDate(e.target.value)}
-                      type="date"
-                      placeholder="Enter the Task Title"
-                      classN="w-75 mb-2 "
-                    />
-                  </div>
-                </div>
-                <div className="row ">
-                  <div className="col-lg-12">
-                    <div className="d-flex flex-column justify-content-center align-items-center">
-                      <Abs_Input
-                        type="text"
-                        placeholder="Enter the Expense Heading"
-                        classN="w-50 mb-2 form-control"
-                        val={expenseTitle}
-                        changeFunc={(e) => setExpenseTitle(e.target.value)}
-                      />
-                      <Abs_Input
-                        type="number"
-                        placeholder="Enter Amount"
-                        classN="w-50 mb-2 form-control"
-                        val={amount}
-                        changeFunc={(e) => setAmount(e.target.value)}
-                      />
-                      <textarea
-                        className="form-control mb-4 w-50"
-                        rows="4"
-                        placeholder="Enter the Expense Detail"
-                        value={expenseDetail}
-                        onChange={(e) => setExpenseDetail(e.target.value)}
-                      ></textarea>
-                      <Abs_Button title="Add Expense" events={handleExpense} />
-                    </div>
-                  </div>
-                </div>
+                <ExpenseForm updateExpense={(data) => setExpense(data)} />
               </div>
               <div
                 class="tab-pane fade"
@@ -145,7 +99,40 @@ const Expenses = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {expense.map((e, idx) => (
+                    {expense.map((e, idx) => {
+                      if (e.id == expenseId) {
+                        return (
+                          <tr className="expense_tabless" data-aos="fade-up">
+                            <td colSpan={7}>
+                              <ExpenseForm
+                                updateExpense={(data) => {
+                                  setExpenseId("");
+                                }}
+                              />
+                            </td>
+                          </tr>
+                        );
+                      } else {
+                        return (
+                          <Abs_Expenselist
+                            key={idx}
+                            id={e.id}
+                            expDate={e.expDate}
+                            expenseTitle={e.expenseTitle}
+                            amount={e.amount}
+                            expenseDetail={e.expenseDetail}
+                            pressDlt={() => {
+                              setExpense(
+                                expense.filter((ele) => ele.id !== e.id)
+                              );
+                            }}
+                            editPress={() => setExpenseId(e.id)}
+                          />
+                        );
+                      }
+                    })}
+
+                    {/* {expense.map((e, idx) => (
                       <Abs_Expenselist
                         key={idx}
                         id={e.id}
@@ -159,7 +146,7 @@ const Expenses = () => {
                           );
                         }}
                       />
-                    ))}
+                    ))} */}
                   </tbody>
                 </table>
               </div>

@@ -11,3 +11,11 @@
 .company-section .table{
     background: white;
 }
+.Data{
+    color: red;
+}
+
+
+.company-section .btn_add{
+    margin-top: 8px;
+}

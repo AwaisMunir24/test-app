@@ -28,6 +28,7 @@ const ProductForm = ({ updateData }) => {
   const [productData, setProductData] = useState(lsGetItem(LS_PRODUCT_DATA));
   const [carton, setCarton] = useState();
   const [cat, setCat] = useState(false);
+  const [message, setMessage] = useState(false);
 
   useEffect(() => {
     lsSetItem(LS_PRODUCT_DATA, productData);
@@ -42,9 +43,9 @@ const ProductForm = ({ updateData }) => {
     setItemCategory(e);
   };
 
-  const handleCompany = () => {};
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
 
-  const _handleSaveProduct = (e) => {
     const kixxs = [
       ...productData,
       {
@@ -60,24 +61,43 @@ const ProductForm = ({ updateData }) => {
       },
     ];
 
-    // console.log(productData)
-    // setProductData(kixxs);
-    setProductName("");
-    setItemCategory("");
-    setCost("");
-    setPrice("");
-    setQty("");
-    setCarton("");
-    setCompany("");
-    setFixedValue("");
-    // console.log(company, "<==");
-    updateData(kixxs);
+    if (
+      ProductName == "" ||
+      itemCategory == ""
+      // cost == "" ||
+      // price == "" ||
+      // qty == "" ||
+      // carton == "" ||
+      // fixedValue == "" ||
+      // company == ""
+    ) {
+
+      setMessage(true);
+      console.log("NOT wORING..")
+    } else {
+      console.log("WORKFING.1")
+      setMessage(false);
+
+    
+      updateData(kixxs)
+          setProductName("");
+      // setItemCategory("");
+      // setCost("");
+      setPrice("");
+      setQty("");
+      setCarton("");
+      setCompany("");
+      // setFixedValue("");
+      console.log("WORKFING.2")
+
+    }
   };
+
   return (
-    <form>
+    <form onSubmit={onSubmitHandler}>
       <div className="row">
         <div className="col-lg-6 col-md-6 col-sm-12">
-          <div>
+          <div className="product_Information_section">
             <label className="form-label">Product</label>
             <Abs_Input
               changeFunc={(e) => setProductName(e.target.value)}
@@ -85,9 +105,12 @@ const ProductForm = ({ updateData }) => {
               val={ProductName}
               classN="form-control"
             />
+            {message && !ProductName && (
+              <p className="m-0 Data product_Error">Please Enter Product</p>
+            )}
           </div>
 
-          <div className="input-section">
+          <div className="input-section product_Information_section2">
             <label className="form-label">Quantity</label>
             <Abs_Input
               changeFunc={(e) => setQty(e.target.value)}
@@ -95,6 +118,9 @@ const ProductForm = ({ updateData }) => {
               val={qty}
               classN="form-control"
             />
+            {message && !qty && (
+              <p className="m-0 Data product_Error2">Please Enter Product</p>
+            )}
           </div>
           <div className="input-section">
             <label className="form-label">Discount:</label>
@@ -109,7 +135,7 @@ const ProductForm = ({ updateData }) => {
               >
                 <p className="m-0 porduct-downdowns">
                   {" "}
-                  Select Discount Mode <span> {`${discountType}`}</span>{" "}
+                   <span> {`${discountType}`}</span>{" "}
                 </p>
               </button>
               <div
@@ -132,9 +158,10 @@ const ProductForm = ({ updateData }) => {
                 </a>
               </div>
             </div>
+            {/* {message && !qty && <p className="m-0 Data">Please Enter Product</p>} */}
           </div>
 
-          <div className="input-section">
+          <div className="input-section product_Information_section3">
             <label className="form-label">Carton Price</label>
             <Abs_Input
               changeFunc={(e) => setCarton(e.target.value)}
@@ -142,6 +169,9 @@ const ProductForm = ({ updateData }) => {
               val={carton}
               classN="form-control"
             />
+            {message && !carton && (
+              <p className="m-0 Data product_Error3">Please Enter Product</p>
+            )}
           </div>
         </div>
         <div className="col-lg-6 col-md-6 col-sm-12">
@@ -196,7 +226,7 @@ const ProductForm = ({ updateData }) => {
               </div>
             </div>
           </div>
-          <div className="input-section">
+          <div className="input-section product_Information_section4">
             <label className="form-label">Company:</label>
             <Abs_Input
               type="text"
@@ -204,6 +234,9 @@ const ProductForm = ({ updateData }) => {
               val={company}
               changeFunc={(e) => setCompany(e.target.value)}
             />
+            {message && !company && (
+              <p className="m-0 Data product_Error4">Please Enter Product</p>
+            )}
           </div>
 
           <div className="input-section" aria-disabled>
@@ -217,8 +250,9 @@ const ProductForm = ({ updateData }) => {
               value={discountType == PERCENTAGE ? "" : fixedValue}
               onChange={(e) => setFixedValue(e.target.value)}
             />
+            {/* {message && !company && <p className="m-0 Data">Please Enter Product</p>} */}
           </div>
-          <div className="input-section">
+          <div className="input-section product_Information_section5">
             <label className="form-label">Unit Price</label>
             <Abs_Input
               changeFunc={(e) => setPrice(e.target.value)}
@@ -226,12 +260,14 @@ const ProductForm = ({ updateData }) => {
               val={price}
               classN="form-control"
             />
+            {message && !price && (
+              <p className="m-0 Data product_Error5">Please Enter Product</p>
+            )}
           </div>
         </div>
         <div className="form-submit-button">
-          <Link to="">
-            <Abs_Button title="Save Product" events={_handleSaveProduct} />
-          </Link>
+          <Abs_Button title="Save Product" />
+        
         </div>
       </div>
     </form>
