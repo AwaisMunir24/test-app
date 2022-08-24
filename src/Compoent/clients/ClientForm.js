@@ -62,7 +62,13 @@ const ClientForm = ({ updateClient }) => {
     // setShop("");
     // updateClient(Clients);
   };
+  const min='0';
+  const max="10000000000"
 
+  const handleNumberChange=(e)=>{
+    const number = Math.max(min,Math.min(max,Number(e.target.value)))
+   setNumber(number);
+  }
   return (
     <>
       <form onSubmit={onSubmitClientHandler}>
@@ -97,7 +103,7 @@ const ClientForm = ({ updateClient }) => {
             <div className="client-info-box3">
               <label className="form-label">Number</label>
               <Abs_Input
-                changeFunc={(e) => setNumber(e.target.value)}
+                changeFunc={handleNumberChange}
                 type="number"
                 val={number}
                 classN="form-control"

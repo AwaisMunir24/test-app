@@ -10,6 +10,13 @@ const TaskForm = ({ updateTask }) => {
   const [endtDate, setEndDate] = useState("");
   const [list, setList] = useState(lsGetItem(LS_TASK_DATA));
   const [message, setMessage] = useState(false);
+  const [loading,setLoading]=useState(false)
+  const fetchData=()=>{
+    setLoading(true);
+    setTimeout(()=>{
+      setLoading(false)
+    },2000)
+  }
 
   useEffect(() => {
     lsSetItem(LS_TASK_DATA, list);
@@ -123,7 +130,9 @@ const TaskForm = ({ updateTask }) => {
                 <p className="m-0 Data task_error_msg4">Please Enter Task Detail</p>
               )}
 
-              <Abs_Button title="Add Task" />
+              <Abs_Button title="Add Task" isLoading={loading} handleSpinner={fetchData}
+             
+              />
             </div>
           </div>
         </div>

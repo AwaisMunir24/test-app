@@ -44,6 +44,12 @@ const ExpenseForm = ({ updateExpense }) => {
 
     // updateCompany(newComp);
   };
+  const min=0;
+  const max=100000000000000;
+  const handleExpenseAmountChange=(e)=>{
+    const amount = Math.max(min, Math.min(max, Number(e.target.value)));
+    setAmount(amount);
+  }
 
   return (
     <>
@@ -86,7 +92,7 @@ const ExpenseForm = ({ updateExpense }) => {
                 placeholder="Enter Amount"
                 classN="w-50 mb-2 form-control"
                 val={amount}
-                changeFunc={(e) => setAmount(e.target.value)}
+                changeFunc={handleExpenseAmountChange}
               />
               {message && !amount && (
                 <p className="m-0 Data exp_Error_msg3">Please Expense Date</p>

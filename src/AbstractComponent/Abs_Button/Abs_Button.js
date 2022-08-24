@@ -1,13 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import './Abs_Button.css';
 
 const Abs_Button=(props)=>{
-const {title,events,changeValue, buttonHide}=props;
+    const {title,changeValue, buttonHide,handleSpinner,isLoading}=props;
+    // const [isLoading,setIsLoading]=useState(false);
+   
     return(
 
         <>
         <div className='btn_add'>
-                <button onClick={events} onChange={changeValue}> {title}</button>
+                <button onClick={handleSpinner}  onChange={changeValue}>
+                    {
+                        isLoading ?<i className="fa-solid fa-arrows-rotate"></i>:title 
+                    }
+                </button>
         </div>
         </>
 

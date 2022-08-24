@@ -92,6 +92,22 @@ const ProductForm = ({ updateData }) => {
 
     }
   };
+  const min="0";
+  const max="1000000";
+  const handleQtyChange=(e)=>{
+    const qty = Math.max(min, Math.min(max, Number(e.target.value)));
+    setQty(qty);
+  }
+  const handleCartonChange=(e)=>{
+    const carton  = Math.max(min, Math.min(max, Number(e.target.value)));
+    setCarton(carton);
+  }
+
+  const handlePriceChange=(e)=>{
+    const price= Math.max(min, Math.min(max, Number(e.target.value)));
+    setPrice(price);
+  }
+
 
   return (
     <form onSubmit={onSubmitHandler}>
@@ -113,7 +129,7 @@ const ProductForm = ({ updateData }) => {
           <div className="input-section product_Information_section2">
             <label className="form-label">Quantity</label>
             <Abs_Input
-              changeFunc={(e) => setQty(e.target.value)}
+              changeFunc={handleQtyChange}
               type="number"
               val={qty}
               classN="form-control"
@@ -164,7 +180,7 @@ const ProductForm = ({ updateData }) => {
           <div className="input-section product_Information_section3">
             <label className="form-label">Carton Price</label>
             <Abs_Input
-              changeFunc={(e) => setCarton(e.target.value)}
+              changeFunc={handleCartonChange}
               type="number"
               val={carton}
               classN="form-control"
@@ -255,7 +271,7 @@ const ProductForm = ({ updateData }) => {
           <div className="input-section product_Information_section5">
             <label className="form-label">Unit Price</label>
             <Abs_Input
-              changeFunc={(e) => setPrice(e.target.value)}
+              changeFunc={handlePriceChange}
               type="number"
               val={price}
               classN="form-control"

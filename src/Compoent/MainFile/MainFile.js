@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import HomePage from "../homepage/HomePage";
 import Login from "../Login/Login";
-import CashInvoices from "../cashinvoice/CashInvoice";
 
 const MainFile = () => {
-  
   const [addRmoveClass, setaddRmoveClass] = useState(true);
   const _handleToggleClasses = () => {
     setaddRmoveClass(!addRmoveClass);
@@ -18,14 +16,11 @@ const MainFile = () => {
   };
   return (
     <>
-   
       <div className="main-container ">
         <Routes>
           <Route path="" element={<Login />} />
           <Route path="/homepage" element={<HomePage />} />
-        
 
-          
           {/* <Route path="invoices" element={<Invoices />} />
           <Route path="addproduct" element={<AddProduct />} />
           <Route path="addclient" element={<AddClient />} />

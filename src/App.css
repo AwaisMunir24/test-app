@@ -36,7 +36,8 @@ section {
 .company-section,
 .first-expense-section,
 .first-pricelist-section,
-.first-sales-section {
+.first-sales-section,
+.first-stock-section {
     height: 100vh !important;
     overflow-x: scroll;
 }

@@ -13,6 +13,7 @@ import Payments from "../payments/Payments";
 import Expenses from "../expenses/Expenses";
 import CashInvoices from "../cashinvoice/CashInvoice";
 import PriceList from "../pricelist/PriceList";
+import Stock from "../stock/Stock";
 import "./Header.css";
 
 import SidebarMenu from "../MenuSideBar/MenuSidebar";
@@ -108,6 +109,7 @@ const Header = () => {
                 <Route path="/expense" element={<Expenses/>} />
                 <Route path="/cash" element={<CashInvoices/>} />
                 <Route path="/picelist" element={<PriceList/>} />
+                <Route path="/stock" element={<Stock/>} />
               </Routes>
             </div>
           </div>
