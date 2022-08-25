@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Abs_Button from "../../AbstractComponent/Abs_Button/Abs_Button";
 import Abs_Input from "../../AbstractComponent/Abs_input/Abs_input";
+import Abs_DropDown from "../../AbstractComponent/Abs_DropDown/Abs_DropDown";
 import {
   PERCENTAGE,
   FIXED,
@@ -12,9 +13,6 @@ import {
   LS_PRODUCT_DATA,
 } from "../../redux/consts";
 import { lsGetItem, lsSetItem } from "../../utils/helpers";
-
-import { Link } from "react-router-dom";
-
 const ProductForm = ({ updateData }) => {
   const [ProductName, setProductName] = useState("");
   const [cost, setCost] = useState("");
@@ -71,16 +69,14 @@ const ProductForm = ({ updateData }) => {
       // fixedValue == "" ||
       // company == ""
     ) {
-
       setMessage(true);
-      console.log("NOT wORING..")
+      console.log("NOT wORING..");
     } else {
-      console.log("WORKFING.1")
+      console.log("WORKFING.1");
       setMessage(false);
 
-    
-      updateData(kixxs)
-          setProductName("");
+      updateData(kixxs);
+      setProductName("");
       // setItemCategory("");
       // setCost("");
       setPrice("");
@@ -88,26 +84,24 @@ const ProductForm = ({ updateData }) => {
       setCarton("");
       setCompany("");
       // setFixedValue("");
-      console.log("WORKFING.2")
-
+      console.log("WORKFING.2");
     }
   };
-  const min="0";
-  const max="1000000";
-  const handleQtyChange=(e)=>{
+  const min = "0";
+  const max = "1000000";
+  const handleQtyChange = (e) => {
     const qty = Math.max(min, Math.min(max, Number(e.target.value)));
     setQty(qty);
-  }
-  const handleCartonChange=(e)=>{
-    const carton  = Math.max(min, Math.min(max, Number(e.target.value)));
+  };
+  const handleCartonChange = (e) => {
+    const carton = Math.max(min, Math.min(max, Number(e.target.value)));
     setCarton(carton);
-  }
+  };
 
-  const handlePriceChange=(e)=>{
-    const price= Math.max(min, Math.min(max, Number(e.target.value)));
+  const handlePriceChange = (e) => {
+    const price = Math.max(min, Math.min(max, Number(e.target.value)));
     setPrice(price);
-  }
-
+  };
 
   return (
     <form onSubmit={onSubmitHandler}>
@@ -140,40 +134,14 @@ const ProductForm = ({ updateData }) => {
           </div>
           <div className="input-section">
             <label className="form-label">Discount:</label>
-            <div className="dropdown">
-              <button
-                className="btn drop-btn dropdown-toggle w-100"
-                type="button"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <p className="m-0 porduct-downdowns">
-                  {" "}
-                   <span> {`${discountType}`}</span>{" "}
-                </p>
-              </button>
-              <div
-                className="dropdown-menu"
-                aria-labelledby="dropdownMenuButton"
-              >
-                <a
-                  className="dropdown-item"
-                  href="#"
-                  onClick={() => handleDisbale(FIXED)}
-                >
-                  {FIXED}
-                </a>
-                <a
-                  className="dropdown-item"
-                  href="#"
-                  onClick={() => handleDisbale(PERCENTAGE)}
-                >
-                  {PERCENTAGE}
-                </a>
-              </div>
-            </div>
+            <Abs_DropDown
+              dropdowntitle={`${discountType}`}
+              firstoption={FIXED}
+              secondoption={PERCENTAGE}
+              events1={() => handleDisbale(FIXED)}
+              events2={() => handleDisbale(PERCENTAGE)}
+            />
+
             {/* {message && !qty && <p className="m-0 Data">Please Enter Product</p>} */}
           </div>
 
@@ -193,54 +161,17 @@ const ProductForm = ({ updateData }) => {
         <div className="col-lg-6 col-md-6 col-sm-12">
           <div>
             <label className="form-label">Category:</label>
-            <div className="dropdown">
-              <button
-                className="btn drop-btn dropdown-toggle w-100"
-                type="button"
-                id="dropdownMenuButton"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                <p className="m-0 porduct-downdowns">
-                  {" "}
-                  Select Categotry <span>{`${itemCategory}`}</span>{" "}
-                </p>
-              </button>
-              <div
-                className="dropdown-menu"
-                aria-labelledby="dropdownMenuButton"
-              >
-                <a
-                  className="dropdown-item"
-                  href="#"
-                  onClick={() => Category(GREESE)}
-                >
-                  {GREESE}
-                </a>
-                <a
-                  className="dropdown-item"
-                  href="#"
-                  onClick={() => Category(LUBRICANTS)}
-                >
-                  {LUBRICANTS}
-                </a>
-                <a
-                  className="dropdown-item"
-                  href="#"
-                  onClick={() => Category(ATF)}
-                >
-                  {ATF}
-                </a>
-                <a
-                  className="dropdown-item"
-                  href="#"
-                  onClick={() => Category(GEAROIL)}
-                >
-                  {GEAROIL}
-                </a>
-              </div>
-            </div>
+            <Abs_DropDown
+              dropdowntitle={`${itemCategory}`}
+              firstoption={GREESE}
+              secondoption={LUBRICANTS}
+              thirdoption={ATF}
+              fourthoption={GEAROIL}
+              events1={() => Category(GREESE)}
+              events2={() => Category(LUBRICANTS)}
+              events3={() => Category(ATF)}
+              events4={() => Category(GEAROIL)}
+            />
           </div>
           <div className="input-section product_Information_section4">
             <label className="form-label">Company:</label>
@@ -283,7 +214,6 @@ const ProductForm = ({ updateData }) => {
         </div>
         <div className="form-submit-button">
           <Abs_Button title="Save Product" />
-        
         </div>
       </div>
     </form>
