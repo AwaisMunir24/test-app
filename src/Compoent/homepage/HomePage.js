@@ -5,6 +5,7 @@ import ContactUs from "./contactus/ContactUs";
 import banner2 from "../../Assestes/photos/banner-sec2.jpg";
 import Testimonials from "./Testimonial/Testimonials";
 import Abs_HomeSli from "../../AbstractComponent/Abs_HomeSli/Abs_HomeSli";
+import Pagination from "./pagination/Pagination";
 
 const HomePage = () => {
   const [slider, setSlider] = useState([
@@ -25,6 +26,8 @@ const HomePage = () => {
   };
   return (
     <>
+                    {/* <Abs_HomeSli sliderImg={banner2} /> */}
+
       <section className="">
         <div className="container-fluid homepage">
           <div className="row">
@@ -40,6 +43,7 @@ const HomePage = () => {
           </div>
         </div>
         <Testimonials />
+        <Pagination/>
         <ContactUs />
       </section>
     </>

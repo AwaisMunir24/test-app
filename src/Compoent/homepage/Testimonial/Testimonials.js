@@ -3,7 +3,7 @@ import "./Testimonials.css";
 import Abs_Slider from "../../../AbstractComponent/Abs_slider/Abs_Slider";
 import testImg from "../../../Assestes/photos/testiimg.jpg";
 import testImg2 from "../../../Assestes/photos/testimg2.jpg";
-import testimonialimg from "../../../Assestes/photos/kixx 3.jpg";
+import testimonialimg from "../../../Assestes/photos/kixx-3.jpg";
 import Slider from "react-slick";
 
 const Testimonials = () => {

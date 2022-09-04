@@ -8,7 +8,7 @@ const Abs_HomeSli = (props) => {
     <>
       <div className="Slider-section-home">
         <div className="Homeslider text-center">
-          <img src={sliderImg} alt="image" className="img-fluid m-auto" />
+          <img src={sliderImg} alt="image" className="img-fluid iamges_banner" />
         </div>
       
       </div>
