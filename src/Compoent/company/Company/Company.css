@@ -19,3 +19,16 @@
 .company-section .btn_add{
     margin-top: 8px;
 }
+.comp_detail_section , .date_section_company{
+    position: relative;
+}
+.error_msg_company2 {
+    position: absolute;
+    left:26%;
+    font-size: 14px;
+}
+.error_msg_company3{
+    position: absolute;
+    left:26%;
+    font-size: 14px;
+}

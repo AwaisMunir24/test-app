@@ -11,6 +11,9 @@
     width: 200px;
     height: 60px;
 }
+.sidebar_items_2::-webkit-scrollbar , section.addproductsection::-webkit-scrollbar , .sidebar_items::-webkit-scrollbar {
+    display: none;
+}
 
 
 

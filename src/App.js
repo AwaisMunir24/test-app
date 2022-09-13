@@ -24,9 +24,10 @@ function App() {
               adminList().length>=1 ?<SidebarMenu/>:''
           
         }
+      
       <MainFile />
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </>
   );
 }

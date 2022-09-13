@@ -66,7 +66,7 @@ const ExpenseForm = ({ updateExpense }) => {
                 classN="w-75 mb-2 "
               />
               {message && !expDate && (
-                <p className="m-0 Data exp_Error_msg">Please Enter Date</p>
+                <p className="Data exp_Error_msg">Please Enter Date</p>
               )}
             </div>
           </div>
@@ -77,15 +77,19 @@ const ExpenseForm = ({ updateExpense }) => {
               <Abs_Input
                 type="text"
                 placeholder="Enter the Expense Heading"
-                classN="w-50 mb-2 form-control"
+                classN="w-50 mb-2 form-control "
                 val={expenseTitle}
                 changeFunc={(e) => setExpenseTitle(e.target.value)}
-              />
+              /> 
+           
               {message && !expenseTitle && (
-                <p className="m-0 Data exp_Error_msg2">
+                   <div className="mb-3">
+                <p className=" Data exp_Error_msg2">
                   Please Enter Expense Heading
                 </p>
+                </div>
               )}
+             
 
               <Abs_Input
                 type="number"
@@ -95,7 +99,9 @@ const ExpenseForm = ({ updateExpense }) => {
                 changeFunc={handleExpenseAmountChange}
               />
               {message && !amount && (
+                <div className="mb-3">
                 <p className="m-0 Data exp_Error_msg3">Please Expense Date</p>
+                </div>
               )}
 
               <textarea
@@ -106,9 +112,11 @@ const ExpenseForm = ({ updateExpense }) => {
                 onChange={(e) => setExpenseDetail(e.target.value)}
               ></textarea>
               {message && !expenseDetail && (
-                <p className="m-0 Data exp_Error_msg4">
+                <div>
+                <p className="Data exp_Error_msg4">
                   Please Enter Expense Detail
                 </p>
+                </div>
               )}
 
               <Abs_Button title="Add Expense" />

@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes ,useNavigate} from "react-router-dom";
 import logo from "../../Assestes/photos/lubi.jpg";
 
 import "./Header.css";
 
 import SidebarMenu from "../MenuSideBar/MenuSidebar";
 const Header = () => {
+  const navigate=useNavigate();
   const [login, setLogin] = useState(true);
   const handleLoginEvent = () => {
     setLogin(!login);
+    navigate('/invoices');
   };
 
   return (
@@ -58,9 +60,7 @@ const Header = () => {
 
               <div className="col-lg-8 text-end">
                 <ul>
-       
-                  
-            
+              
                     <li>
                       <Link to="/" onClick={handleLoginEvent}>
                         Logout

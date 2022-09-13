@@ -14,6 +14,8 @@ import {
 import Abs_Productlist from "../../AbstractComponent/Abs_Productlist/Abs_Productlist";
 import { lsGetItem, lsSetItem } from "../../utils/helpers";
 import ProductForm from "../product/productForm";
+import Pagination from "../../AbstractComponent/paginationtabs/Paginations";
+
 
 const AddProduct = () => {
   const [ProductName, setProductName] = useState("");
@@ -179,13 +181,17 @@ const AddProduct = () => {
                           }}
                           editPress={() => setEditingId(e.id)}
                         />
-                      );
+                        );
+                      
+                        
                     }
                   })}
                 </tbody>
               </table>
+              <Pagination/>
             </div>
           </div>
+      
           {/* <!-- Tabs content --> */}
         </div>
       </section>

@@ -81,9 +81,11 @@ const TaskForm = ({ updateTask }) => {
                 classN="w-75 mb-2 "
               />
               {message && !startDate && (
+                <div>
                 <p className="m-0 Data task_error_msg">
                   Please Enter Start Date
                 </p>
+                </div>
               )}
             </div>
           </div>
@@ -95,12 +97,14 @@ const TaskForm = ({ updateTask }) => {
                 changeFunc={(e) => setEndDate(e.target.value)}
                 type="date"
                 placeholder="Enter the Task Title"
-                classN="w-75 mb-2"
+                classN="w-75 mb-1"
               />
               {message && !endtDate && (
+                <div className="mb-3">
                 <p className="m-0 Data task_error_msg2">
                   Please Enter End Date
                 </p>
+                </div>
               )}
             </div>
           </div>
@@ -111,23 +115,27 @@ const TaskForm = ({ updateTask }) => {
               <Abs_Input
                 type="text"
                 placeholder="Enter the Task Title"
-                classN="w-50 mb-4 form-control"
+                classN="w-50 mb-2 form-control"
                 val={task}
                 changeFunc={(e) => setTask(e.target.value)}
               />
               {message && !task && (
+                <div className="mb-3">
                 <p className="m-0 Data task_error_msg3">Please Enter Task Detail</p>
+                </div>
               )}
 
               <textarea
-                className="form-control mb-4 w-50"
+                className="form-control mb-2 w-50"
                 rows="4"
                 placeholder="Enter the Detail"
                 value={detail}
                 onChange={(e) => setDetail(e.target.value)}
               ></textarea>
               {message && !detail && (
+                <div className="mb-3">
                 <p className="m-0 Data task_error_msg4">Please Enter Task Detail</p>
+                </div>
               )}
 
               <Abs_Button title="Add Task" isLoading={loading} handleSpinner={fetchData}

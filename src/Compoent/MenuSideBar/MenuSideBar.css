@@ -2,15 +2,16 @@
     width: 250px;
     background: #FCFEFD;
     position: relative;
-    height: 90vh;
+    height: 100vh;
+    overflow: scroll;
 }
 
 .sidebar_items_2 {
     width: 100px;
     background: #FCFEFD;
     position: relative;
-    height: 90vh;
-    overflow: hidden;
+    height: 100vh;
+    overflow: scroll;
 }
 
 .sidebar_items .icons i {
@@ -58,6 +59,9 @@
 
 
 }
+.navigation_list a:active li {
+    color: rgb(255, 105, 138) !important;
+  }
 
 .navigation_list a {
     text-decoration: none;

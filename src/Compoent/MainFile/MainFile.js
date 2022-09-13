@@ -14,6 +14,8 @@ import Quotation from "../quotation/Quotation";
 import Sales from "../sales/Sales";
 import Stock from "../stock/Stock";
 import Tasks from "../tasks/Tasks";
+import ErrorPage from "../errorpage/ErrorPage";
+import BillingSlip from "../billingslip/BillingSlip";
 
 const MainFile = () => {
   function adminList() {
@@ -56,6 +58,8 @@ const MainFile = () => {
           <Route path="picelist" element={<PriceList />} />
           <Route path="stock" element={<Stock />} />
           <Route path="homepage" element={<HomePage />} />
+          <Route path="errorpage" element={<ErrorPage/>} />
+          <Route path="billing" element={<BillingSlip/>} />
         </Routes>
       </div>
     </>

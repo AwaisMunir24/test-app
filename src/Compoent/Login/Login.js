@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./Login.css";
 import lubioil from "../../Assestes/photos/lubioil.png";
 import logo from "../../Assestes/photos/lubi.jpg";
+import { useNavigate } from "react-router-dom";
 
 
 
 const Login = () => {
+  const navigate=useNavigate();
   function adminList(){
     let items =JSON.parse (localStorage.getItem('admin'));
     if (items) {
@@ -33,6 +35,8 @@ const Login = () => {
   useEffect(() => {
     localStorage.setItem("admin", JSON.stringify(admin));
   }, [admin]);
+
+
 
   return (
     <>
@@ -83,7 +87,7 @@ const Login = () => {
                     </div>
                     <a href="#!">Forgot password?</a>
                   </div>
-                  <button className="btn btn-primary btn-lg btn-block btn-dark w-100 "        
+                  <button className="btn btn-primary btn-lg btn-block btn-dark w-100 "     
                   >
                     Sign in
                   </button>

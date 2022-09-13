@@ -74,7 +74,7 @@ const CompaniesForm = ({ updateCompany }) => {
       <form onSubmit={onSubmitHandler}>
         <div className="row justify-content-center text-end">
           <div className="col-lg-3 text-start d-flex flex-column">
-            <div>
+            <div className="date_section_company">
               <span>Date: </span>
               <Abs_Input
                 val={date}
@@ -84,10 +84,12 @@ const CompaniesForm = ({ updateCompany }) => {
                 classN="w-75 mb-1"
               />
             </div>
-            <div className="text-center">
+            <div className="text-start">
               {" "}
               {message && !date && (
-                <p className="m-0 Data ">Please Enter Date</p>
+                <div className="mb-3">
+                <p className="m-0 Data error_msg_company1">Please Enter Date</p>
+                </div>
               )}
             </div>
           </div>
@@ -101,9 +103,13 @@ const CompaniesForm = ({ updateCompany }) => {
                   val={name}
                   changeFunc={(e) => setName(e.target.value)}
                 />
+                  <div className="text-start">
                 {message && !name && (
-                  <p className="m-0 Data">Please Enter Company Name</p>
+                  <div className="mb-3"> 
+                  <p className="m-0 Data error_msg_company2">Please Enter Company Name</p>
+                  </div>
                 )}
+                </div>
 
                 <textarea
                   className="form-control mt-2 pb-2 w-50"
@@ -114,7 +120,9 @@ const CompaniesForm = ({ updateCompany }) => {
                 ></textarea>
 
                 {message && !detail && (
-                  <p className="m-0 Data">Please Enter Company Detail</p>
+                  <div className="mb-4">
+                  <p className="m-0 Data error_msg_company3">Please Enter Company Detail</p>
+                </div>
                 )}
                 <Abs_Button className="pt-2" title="Save" />
               </div>

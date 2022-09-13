@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+
 const Abs_Productlist = (props) => {
     const {id,ProductName,itemCategory,price,qty,carton,company,fixedValue,pressDlt, editPress}=props;
+    
   return (
     <>
       <tr>
@@ -15,6 +17,7 @@ const Abs_Productlist = (props) => {
         <td><i className="fa-solid fa-circle-minus" onClick={pressDlt}></i></td>
         {/* <td><i className="fa-solid fa-circle-minus" onClick={editPress}></i></td> */}
         <td><i className="fa-solid fa-file-pen" onClick={editPress}></i></td>
+         
       </tr>
     </>
   );
