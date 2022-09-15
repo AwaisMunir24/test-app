@@ -4,8 +4,10 @@ import Abs_Heading from "../../AbstractComponent/Abs_Heading/Abs_Heading";
 import Abs_ClientList from "../../AbstractComponent/Abs_ClientList/Abs_ClientList";
 import ClientForm from "../clients/ClientForm";
 import { lsGetItem, lsSetItem } from "../../utils/helpers";
-import { LS_CLIENT_DATA } from "../../redux/consts";
+import { LS_CLIENT_DATA, LS_NUMBEROF_LISTS } from "../../redux/consts";
+import Pagination from "../../AbstractComponent/paginationtabs/Paginations";
 const AddClient = () => {
+  const [pageList,setPageList]=useState(LS_NUMBEROF_LISTS);
   function getUsers() {
     const users = localStorage.getItem("userData");
     if (users) {
@@ -122,6 +124,7 @@ const AddClient = () => {
                   })}
                 </tbody>
               </table>
+            <Pagination/>
             </div>
           </div>
           {/* Tabs content  */}

@@ -6,9 +6,10 @@ import Abs_CompList from "../../AbstractComponent/Abs_CompList/Abs_CompList";
 import CompaniesForm from "../companies/CompaniesForm";
 import "./Company/Company.css";
 import { lsGetItem, lsSetItem } from "../../utils/helpers";
-import { LS_COMPANY_DATA } from "../../redux/consts";
+import { LS_COMPANY_DATA, LS_NUMBEROF_LISTS } from "../../redux/consts";
+import Pagination from "../../AbstractComponent/paginationtabs/Paginations";
 const Company = () => {
- 
+  const [pageList,setPageList]=useState(LS_NUMBEROF_LISTS);
   const [name, setName] = useState("");
   const [detail, setDetail] = useState("");
   const [date, setDate] = useState("");
@@ -135,6 +136,7 @@ const Company = () => {
                    
                   </tbody>
                 </table>
+                <Pagination/>
               </div>
             </div>
 

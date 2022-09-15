@@ -1,8 +1,11 @@
 import React, { Component, useState } from "react";
 import Abs_Heading from "../../AbstractComponent/Abs_Heading/Abs_Heading";
 import Abs_Stock from "../../AbstractComponent/Abs_Stock/Abs_Stock";
+import Pagination from "../../AbstractComponent/paginationtabs/Paginations";
+import { LS_NUMBEROF_LISTS } from "../../redux/consts";
 import "./Stock.css";
 const Stock = () => {
+  const [pageList,setPageList]=useState(LS_NUMBEROF_LISTS);
     const[stock,setStock]=useState([
         {
             productid:"1",
@@ -50,6 +53,7 @@ const Stock = () => {
                     }
                   </thead>
                 </table>
+                <Pagination/>
               </div>
             </div>
           </div>

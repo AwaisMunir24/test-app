@@ -2,7 +2,10 @@ import React, { Component, useState } from "react";
 import "./PriceList.css";
 import Abs_Heading from "../../AbstractComponent/Abs_Heading/Abs_Heading";
 import Abs_PriceList from "../../AbstractComponent/Abs_PriceList/Abs_PriceList";
+import Pagination from "../../AbstractComponent/paginationtabs/Paginations";
+import { LS_NUMBEROF_LISTS } from "../../redux/consts";
 const PriceList = () => {
+  const [pageList,setPageList]=useState(LS_NUMBEROF_LISTS);
   const [list, setList] = useState([
     {
       id: "1",
@@ -102,6 +105,7 @@ const PriceList = () => {
                    
                   </tbody>
                 </table>
+                <Pagination/>
               </div>
               <div
                 class="tab-pane fade"
@@ -143,6 +147,7 @@ const PriceList = () => {
                    
                   </tbody>
                 </table>
+                <Pagination/>
               </div>
               <div
                 class="tab-pane fade"
@@ -184,6 +189,7 @@ const PriceList = () => {
                    
                   </tbody>
                 </table>
+                <Pagination/>
               </div>
             </div>
             {/* <!-- Tabs content --> */}

@@ -59,22 +59,33 @@
 
 
 }
-.navigation_list a:active li {
-    color: rgb(255, 105, 138) !important;
-  }
+
+
 
 .navigation_list a {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
     text-decoration: none;
+    color: black;
+    display: block;
+    padding: 15px 0px;
 }
 
+.navigation_list li a.active{
+    background-color: #f8f8f8 !important;
+
+    color: red;
+}
+/* .navigation_list ul li a.active{
+    background-color: #f8f8f8 !important;
+    border-left: 4px solid #304ffd !important;
+  
+} */
+
+
+
 .navigation_list li {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
     list-style-type: none;
-    color: black;
-    padding: 10px 0px;
-
-
 }
 
 .navigation_list li:hover {
@@ -85,3 +96,4 @@
 .navigation_list i {
     margin-right: 10px;
 }
+

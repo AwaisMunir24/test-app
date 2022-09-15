@@ -1,6 +1,7 @@
 import React, { Component, useState } from "react";
+import './Paginations.css';
 const Pagination = () => {
-   
+ 
   return (
     <>
       <nav aria-label="Page navigation example">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./MenuSideBar.css";
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 
 import { MenuData } from "../Header/MenuData";
 
@@ -22,12 +22,12 @@ const SidebarMenu = () => {
         <ul className="navigation_list">
           {MenuData.map((value, index) => {
             return (
-              <Link to={value.path} key={index}>
-                <li key={index}>
+              <li key={index}>
+                      <NavLink to={value.path}>
                   {value.icon}
                   <span className={`${!open && "hidden"}`}>{value.name}</span>
+              </NavLink>
                 </li>
-              </Link>
             );
           })}
         </ul>

@@ -1,0 +1,7 @@
+.Pagination a.page-link {
+    color: #495057;
+}
+.Pagination a.page-link:focus {
+    outline: none;
+    box-shadow: none;
+}

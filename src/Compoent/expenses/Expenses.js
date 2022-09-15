@@ -3,9 +3,11 @@ import Abs_Heading from "../../AbstractComponent/Abs_Heading/Abs_Heading";
 import "./Expenses.css";
 import Abs_Expenselist from "../../AbstractComponent/Abs_Expenselist/Abs_Expenselist";
 import ExpenseForm from "../expnese/ExpenseForm";
-import { LS_EXPENSE_DATA } from "../../redux/consts";
+import { LS_EXPENSE_DATA, LS_NUMBEROF_LISTS } from "../../redux/consts";
 import { lsGetItem, lsSetItem } from "../../utils/helpers";
+import Pagination from "../../AbstractComponent/paginationtabs/Paginations";
 const Expenses = () => {
+  const [pageList,setPageList]=useState(LS_NUMBEROF_LISTS);
   const [expenseTitle, setExpenseTitle] = useState("");
   const [expenseDetail, setExpenseDetail] = useState("");
   const [expDate, setExpDate] = useState("");
@@ -149,6 +151,7 @@ const Expenses = () => {
                     ))} */}
                   </tbody>
                 </table>
+                <Pagination/>
               </div>
             </div>
           </div>

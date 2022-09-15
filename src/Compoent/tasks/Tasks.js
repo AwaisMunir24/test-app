@@ -5,8 +5,10 @@ import Abs_TaskList from "../../AbstractComponent/Abs_TaskList/Abs_TaskList";
 import "./Tasks.css";
 import TaskForm from "../task/TaskForm";
 import { lsGetItem, lsSetItem } from "../../utils/helpers";
-import { LS_TASK_DATA } from "../../redux/consts";
+import { LS_NUMBEROF_LISTS, LS_TASK_DATA } from "../../redux/consts";
+import Pagination from "../../AbstractComponent/paginationtabs/Paginations";
 const Tasks = () => {
+  const [pageList,setPageList]=useState(LS_NUMBEROF_LISTS);
   const [task, setTask] = useState("");
   const [detail, setDetail] = useState("");
   const [startDate, setStartDate] = useState("");
@@ -136,6 +138,7 @@ const Tasks = () => {
                     })}
                   </tbody>
                 </table>
+                <Pagination/>
               </div>
             </div>
             {/* <!-- Tabs content --> */}

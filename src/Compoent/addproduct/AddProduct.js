@@ -10,6 +10,7 @@ import {
   ATF,
   GEAROIL,
   LS_PRODUCT_DATA,
+  LS_NUMBEROF_LISTS,
 } from "../../../src/redux/consts";
 import Abs_Productlist from "../../AbstractComponent/Abs_Productlist/Abs_Productlist";
 import { lsGetItem, lsSetItem } from "../../utils/helpers";
@@ -18,6 +19,7 @@ import Pagination from "../../AbstractComponent/paginationtabs/Paginations";
 
 
 const AddProduct = () => {
+  const [pageList,setPageList]=useState(LS_NUMBEROF_LISTS);
   const [ProductName, setProductName] = useState("");
   const [cost, setCost] = useState("");
   const [price, setPrice] = useState("");
