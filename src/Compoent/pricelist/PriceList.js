@@ -1,11 +1,14 @@
-import React, { Component, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import "./PriceList.css";
 import Abs_Heading from "../../AbstractComponent/Abs_Heading/Abs_Heading";
 import Abs_PriceList from "../../AbstractComponent/Abs_PriceList/Abs_PriceList";
 import Pagination from "../../AbstractComponent/paginationtabs/Paginations";
-import { LS_NUMBEROF_LISTS } from "../../redux/consts";
+import { LS_NUMBEROF_LISTS, LS_PRODUCT_DATA } from "../../redux/consts";
+import { lsGetItem, lsSetItem } from "../../utils/helpers";
+import Abs_Productlist from "../../AbstractComponent/Abs_Productlist/Abs_Productlist";
 const PriceList = () => {
   const [pageList,setPageList]=useState(LS_NUMBEROF_LISTS);
+  const [firstList,setFirstList]=useState(lsGetItem(LS_PRODUCT_DATA))
   const [list, setList] = useState([
     {
       id: "1",
@@ -19,6 +22,40 @@ const PriceList = () => {
       rate_ctn: "24840",
     },
   ]);
+  const [hell,setHell]=useState([]);
+  const [rowSpan,setRowSpan]=useState([]);
+
+  function hellowolrd(){
+    const categories = ['GREESE','LUBRICANTS','ATF','GEAROIL'];
+    const alldata = [];
+    const rowspan = [];
+    for(var i = 0; i < categories.length; i++ ){
+      const category = categories[i];
+        var rows = 0;
+      const matchingrasulr = firstList.map(function(val,index){
+        // console.log(index);
+        const dbcategory = val.itemCategory;
+        if( dbcategory.match(category) ){
+         rows =  rows + 1;
+          alldata.push(val);
+        }
+      });//map function end here
+      if( rows > 0 ) rowspan[category] = rows ;
+      
+    }
+// return alldata;
+// console.log(rowspan);
+    setHell([...alldata]);
+    setRowSpan(rowspan);
+
+  }
+
+
+
+  useEffect(() => {
+    hellowolrd();
+    lsSetItem(LS_PRODUCT_DATA, firstList);
+  }, [firstList]);
   const [ref, setRef] = useState("1");
   return (
     <>
@@ -93,12 +130,32 @@ const PriceList = () => {
                       <th scope="col">Pack</th>
                       <th scope="col">Rate LTR/KG Rs</th>
                       <th scope="col">Rate Price (Rs.)</th>
-                      <th scope="col">Rate/ CTn (Rs.)</th>
+                      <th scope="col">Rate/ Ctn (Rs.)</th>
                     </tr>
                   </thead>
                   <tbody>
                     {/* price list renders here */}
-                  
+
+                    {
+                      hell.map((e,idx)=>
+                      <Abs_Productlist
+                      rowspan={ rowSpan[e.itemCategory] }
+                      rowid = { idx }
+                      id={e.id}
+                      key={idx}
+                      ProductName={e.ProductName}
+                      itemCategory={e.itemCategory}
+                      price={e.price}
+                      qty={e.qty}
+                      carton={e.carton}
+                      fixedValue={e.fixedValue}
+                      company={e.company}
+                    />
+
+                      )
+                      
+                      
+                    }
                     {/* price list rendering ends here */}
 
 
@@ -122,11 +179,12 @@ const PriceList = () => {
                       <th scope="col">Pack</th>
                       <th scope="col">Rate LTR/KG Rs</th>
                       <th scope="col">Rate Price (Rs.)</th>
-                      <th scope="col">Rate/ CTn (Rs.)</th>
+                      <th scope="col">Rate/ Ctn (Rs.)</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {/* price list renders here */}
+                    {
+                    }
                     {list.map((e, idx) => (
                       <Abs_PriceList
                         key={idx}
@@ -164,7 +222,7 @@ const PriceList = () => {
                       <th scope="col">Pack</th>
                       <th scope="col">Rate LTR/KG Rs</th>
                       <th scope="col">Rate Price (Rs.)</th>
-                      <th scope="col">Rate/ CTn (Rs.)</th>
+                      <th scope="col">Rate/ Ctn (Rs.)</th>
                     </tr>
                   </thead>
                   <tbody>

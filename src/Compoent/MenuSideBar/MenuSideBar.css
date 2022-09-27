@@ -55,7 +55,7 @@
 
 .navigation_list {
     padding-top: 30px;
-    padding-left: 40px;
+    padding-left: 0px !important;
 
 
 }
@@ -72,7 +72,7 @@
 }
 
 .navigation_list li a.active{
-    background-color: #f8f8f8 !important;
+    /* background-color: #f8f8f8 !important; */
 
     color: red;
 }
@@ -86,6 +86,8 @@
 
 .navigation_list li {
     list-style-type: none;
+    display: block;
+    padding-left: 30px;
 }
 
 .navigation_list li:hover {

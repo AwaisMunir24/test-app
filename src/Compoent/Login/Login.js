@@ -8,35 +8,46 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate=useNavigate();
-  function adminList(){
-    let items =JSON.parse (localStorage.getItem('admin'));
-    if (items) {
-       return JSON.parse (localStorage.getItem('admin'));
-       }
-       else{
-        return []
-       }
-  }
+  // function adminList(){
+  //   let items =JSON.parse (localStorage.getItem('admin'));
+  //   if (items) {
+  //      return JSON.parse (localStorage.getItem('admin'));
+  //      }
+  //      else{
+  //       return []
+  //      }
+  // }
 
   const [userName, setUserName] = useState("");
   const [passcode, setPassCode] = useState("");
-  const [admin, setAdmin] = useState(adminList());
+  // const [admin, setAdmin] = useState(adminList());
   const handleLoginPage = (e) => {
-    e.preventDefault();
-    const newAdmin = [
-      ...admin,
-      {
-        userName,
-        passcode,
-      },
-    ];
-    setAdmin(newAdmin);
+    // e.preventDefault();
+    // const newAdmin = [
+    //   ...admin,
+    //   {
+    //     userName,
+    //     passcode,
+    //   },
+    // ];
+    // setAdmin(newAdmin);
   };
-  useEffect(() => {
-    localStorage.setItem("admin", JSON.stringify(admin));
-  }, [admin]);
+  // useEffect(() => {
+  //   localStorage.setItem("admin", JSON.stringify(admin));
+  // }, [admin]);
 
 
+  const _loginFunction=()=>{
+    localStorage.setItem('login',true);
+    navigate('/invoices');
+    
+  }
+  useEffect(()=>{
+    let login =localStorage.getItem('login');
+        if(login){
+            navigate('/invoices')
+        }
+    },[]);
 
   return (
     <>
@@ -88,7 +99,7 @@ const Login = () => {
                     <a href="#!">Forgot password?</a>
                   </div>
                   <button className="btn btn-primary btn-lg btn-block btn-dark w-100 "     
-                  >
+                  onClick={_loginFunction}>
                     Sign in
                   </button>
                 </form>

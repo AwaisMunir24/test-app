@@ -34,7 +34,7 @@ const Stock = () => {
                       <th>Product Name</th>
                       <th>Category</th>
                       <th>Unit Price</th>
-                      <th>Total Price</th>
+                      <th>Stock Amount</th>
                     </tr>
                   </thead>
                   <thead>

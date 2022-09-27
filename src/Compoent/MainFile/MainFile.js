@@ -16,50 +16,52 @@ import Stock from "../stock/Stock";
 import Tasks from "../tasks/Tasks";
 import ErrorPage from "../errorpage/ErrorPage";
 import BillingSlip from "../billingslip/BillingSlip";
+import PrivateComp from "../PrivateCom/PrivateComp";
 
 const MainFile = () => {
-  function adminList() {
-    let items = JSON.parse(localStorage.getItem("admin"));
-    if (items) {
-      return JSON.parse(localStorage.getItem("admin"));
-    } else {
-      return [];
-    }
-  }
-  const [admins, setAdmins] = useState(adminList());
+  // function adminList() {
+  //   let items = JSON.parse(localStorage.getItem("admin"));
+  //   if (items) {
+  //     return JSON.parse(localStorage.getItem("admin"));
+  //   } else {
+  //     return [];
+  //   }
+  // }
+  // const [admins, setAdmins] = useState(adminList());
 
   let navigate = useNavigate();
-  const loginng = () => {
-    navigate("/");
+  // const loginng = () => {
+  //   navigate("/");
 
-    console.log(admins, "apps");
-  };
-  useEffect(() => {
-    loginng();
-  }, []);
+  //   console.log(admins, "apps");
+  // };
+  // useEffect(() => {
+  //   loginng();
+  // }, []);
   return (
     <>
       <div className="context ">
-        <Routes>
-          {/* <Route path="" element={<Login />} />
-          <Route path="/homepage" element={<HomePage />} /> */}
-
-          <Route path="/" element={<Login />} />
-          <Route path="invoices" element={<Invoices />} />
-          <Route path="addproduct" element={<AddProduct />} />
-          <Route path="addclient" element={<AddClient />} />
-          <Route path="sales" element={<Sales />} />
-          <Route path="tasks" element={<Tasks />} />
-          <Route path="company" element={<Company />} />
-          <Route path="quote" element={<Quotation />} />
-          <Route path="pay" element={<Payments />} />
-          <Route path="expense" element={<Expenses />} />
-          <Route path="cash" element={<CashInvoices />} />
-          <Route path="picelist" element={<PriceList />} />
-          <Route path="stock" element={<Stock />} />
+        <Routes >
+   
+        {/* Public Pages starts here */}
+          <Route path="login" element={<Login />} />
           <Route path="homepage" element={<HomePage />} />
-          <Route path="errorpage" element={<ErrorPage/>} />
           <Route path="billing" element={<BillingSlip/>} />
+          {/* Public Pages starts here */}
+          <Route path="invoices" element={< PrivateComp Component={Invoices} />} />
+          <Route path="addproduct" element={<PrivateComp Component={AddProduct} />} />
+          <Route path="addclient" element={<PrivateComp Component={AddClient} />} />
+          <Route path="sales" element={<PrivateComp Component={Sales} />} />
+          <Route path="tasks" element={<PrivateComp Component={Tasks} />} />
+          <Route path="company" element={<PrivateComp Component={Company} />} />
+          <Route path="quote" element={<PrivateComp Component={Quotation} />} />
+          <Route path="pay" element={<PrivateComp Component={Payments} />} />
+          <Route path="expense" element={<PrivateComp Component={Expenses} />} />
+          <Route path="cash" element={<PrivateComp Component={CashInvoices} />} />
+          <Route path="picelist" element={<PrivateComp Component={PriceList} />} />
+          <Route path="stock" element={<PrivateComp Component={Stock} />} />
+          <Route path="*" element={<ErrorPage/>} />
+        
         </Routes>
       </div>
     </>

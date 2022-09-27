@@ -1,14 +1,31 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 
 const Abs_Productlist = (props) => {
-    const {id,ProductName,itemCategory,price,qty,carton,company,fixedValue,pressDlt, editPress}=props;
-    
+    const {id,ProductName,rowid,itemCategory,price,qty,carton,company,fixedValue,pressDlt, editPress,rowspan}=props;
+const [li, setli] = useState(false);    
+
+function abcd(){
+  if( rowid + 1 < rowspan ){
+    setli(true)
+  }
+}
+useEffect(()=>{
+  abcd();
+},[]);
+
   return (
     <>
       <tr>
         <th scope="row">{id}</th>
         <td>{ProductName}</td>
-        <td>{itemCategory}</td>
+        {
+          
+          li  ? 
+          <td rowSpan={rowspan} > {itemCategory} </td> 
+          : !li && rowspan > 1 ? 
+          ''
+          : <td> {itemCategory} </td> 
+        }
         <td>{price}</td>
         <td>{qty}</td>
         <td>{carton}</td>

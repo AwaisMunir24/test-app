@@ -32,9 +32,10 @@ header .col-lg-9 a {
     height: 58px;
     border-radius: 50%;
     }
-.header-section .col-lg-8 a{
+.header-section .col-lg-8 a ,.header-section li{ 
     color: #fff;
     font-size: 18px;
     font-weight: 700;
+    cursor: pointer;
 }
 

@@ -91,20 +91,20 @@ export const MenuData = [
       icon:<i className="fa-solid fa-boxes-stacked"></i>,
       path:"stock"
     },
-    {
-      id:13,
-      name:"Error",
-      className:"nav-link",
-      icon:<i className="fa-solid fa-boxes-stacked"></i>,
-      path:"errorpage"
-    },
-    {
-      id:14,
-      name:"Bill layout",
-      className:"nav-link",
-      icon:<i className="fa-solid fa-boxes-stacked"></i>,
-      path:"billing"
-    },
+    // {
+    //   id:13,
+    //   name:"Error",
+    //   className:"nav-link",
+    //   icon:<i className="fa-solid fa-boxes-stacked"></i>,
+    //   path:"errorpage"
+    // },
+    // {
+    //   id:14,
+    //   name:"Bill layout",
+    //   className:"nav-link",
+    //   icon:<i className="fa-solid fa-boxes-stacked"></i>,
+    //   path:"billing"
+    // },
    
  
   ];
