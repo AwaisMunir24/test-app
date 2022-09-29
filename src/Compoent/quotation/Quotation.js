@@ -137,7 +137,7 @@ const Quotation = () => {
                 </div>
               </div>
               <div className="col-lg-4">
-                <table class="table table-bordered">
+                <table className="table table-bordered">
                   <tbody>
                     <tr>
                       <td>Sales Invoice:</td>

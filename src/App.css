@@ -5,6 +5,9 @@
 .context {
     /* padding: 50px; */
     width: calc(100% - 0px);
+    margin-top: 99px;
+    /* height: 100vh;
+    overflow: scroll; */
 }
 
 .logo-img {
@@ -74,4 +77,18 @@ button#dropdownMenuButton {
     border-radius: 20px;
     background: wheat;
     padding: 20px;
+}
+.error_msg_mobile{
+    display: none;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .Main_App{
+    display: none;
+  }
+  .error_msg_mobile{
+    display: block;
+  }
 }

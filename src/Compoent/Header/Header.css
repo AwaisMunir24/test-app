@@ -10,8 +10,9 @@ header li {
 header {
     background: #383838;
     padding: 20px 0px;
-    
-
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 }
 
 header .col-lg-3 a {

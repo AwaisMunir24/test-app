@@ -119,11 +119,7 @@ button#dropdownMenuButton {
     }
 }
 
-@media screen and (max-width: 768px) {
-    .input-section {
-        padding-top: 0px;
-    }
-}
+
 
 @media screen and (max-width: 992px) {
 
@@ -134,5 +130,13 @@ button#dropdownMenuButton {
 
     .head h3 {
         font-size: 25px;
+    }
+    .addproductsection   .input-section {
+        padding-top: 12px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .input-section {
+        padding-top: 0px;
     }
 }

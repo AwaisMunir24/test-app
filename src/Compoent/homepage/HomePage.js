@@ -28,7 +28,7 @@ const HomePage = () => {
     <>
                     {/* <Abs_HomeSli sliderImg={banner2} /> */}
 
-      <section className="">
+      <section className="homes_page">
         <div className="container-fluid homepage">
           <div className="row">
             <div className="col-lg-12 text-center">

@@ -62,8 +62,8 @@ const ExpenseForm = ({ updateExpense }) => {
                 val={expDate}
                 changeFunc={(e) => setExpDate(e.target.value)}
                 type="date"
-                placeholder="Enter the Task Title"
-                classN="w-75 mb-2 "
+                placeholder="Enter the Task Title "
+                classN="w-75 mb-2 date_inp "
               />
               {message && !expDate && (
                 <p className="Data exp_Error_msg">Please Enter Date</p>
@@ -77,7 +77,7 @@ const ExpenseForm = ({ updateExpense }) => {
               <Abs_Input
                 type="text"
                 placeholder="Enter the Expense Heading"
-                classN="w-50 mb-2 form-control "
+                classN=" mb-2 form-control exp_inp"
                 val={expenseTitle}
                 changeFunc={(e) => setExpenseTitle(e.target.value)}
               /> 
@@ -94,7 +94,7 @@ const ExpenseForm = ({ updateExpense }) => {
               <Abs_Input
                 type="number"
                 placeholder="Enter Amount"
-                classN="w-50 mb-2 form-control"
+                classN=" mb-2 form-control exp_inp"
                 val={amount}
                 changeFunc={handleExpenseAmountChange}
               />
@@ -105,7 +105,7 @@ const ExpenseForm = ({ updateExpense }) => {
               )}
 
               <textarea
-                className="form-control mb-4 w-50"
+                className="form-control mb-4  exp_inp"
                 rows="4"
                 placeholder="Enter the Expense Detail"
                 value={expenseDetail}

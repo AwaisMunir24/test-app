@@ -98,7 +98,7 @@ const CompaniesForm = ({ updateCompany }) => {
               <div className="d-flex flex-column justify-content-center align-items-center comp_detail_section">
                 <Abs_Input
                   type="text"
-                  classN="w-50 mt-3 form-control"
+                  classN=" mt-3 form-control comp_input"
                   placeholder="Enter the Company Name"
                   val={name}
                   changeFunc={(e) => setName(e.target.value)}
@@ -112,7 +112,7 @@ const CompaniesForm = ({ updateCompany }) => {
                 </div>
 
                 <textarea
-                  className="form-control mt-2 pb-2 w-50"
+                  className="form-control mt-2 pb-2  comp_input" 
                   rows="4"
                   placeholder="Enter the Company Discription"
                   value={detail}

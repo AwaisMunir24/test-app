@@ -72,10 +72,10 @@ const Sales = () => {
               </div>
             </div>
             {/* <!-- Tabs navs --> */}
-            <ul class="nav nav-tabs mb-3" id="ex1" role="tablist">
-              <li class="nav-item" role="presentation">
+            <ul className="nav nav-tabs mb-3" id="ex1" role="tablist">
+              <li className="nav-item" role="presentation">
                 <a
-                  class="nav-link active"
+                  className="nav-link active"
                   id="ex1-tab-1"
                   data-mdb-toggle="tab"
                   href="#ex1-tabs-1"
@@ -86,9 +86,9 @@ const Sales = () => {
                   Sales
                 </a>
               </li>
-              <li class="nav-item" role="presentation">
+              <li className="nav-item" role="presentation">
                 <a
-                  class="nav-link"
+                  className="nav-link"
                   id="ex1-tab-2"
                   data-mdb-toggle="tab"
                   href="#ex1-tabs-2"
@@ -102,9 +102,9 @@ const Sales = () => {
             </ul>
             {/* <!-- Tabs navs --> */}
             {/* <!-- Tabs content --> */}
-            <div class="tab-content" id="ex1-content">
+            <div className="tab-content" id="ex1-content">
               <div
-                class="tab-pane fade show active"
+                className="tab-pane fade show active"
                 id="ex1-tabs-1"
                 role="tabpanel"
                 aria-labelledby="ex1-tab-1"
@@ -122,7 +122,7 @@ const Sales = () => {
                 </table>
               </div>
               <div
-                class="tab-pane fade"
+                className="tab-pane fade"
                 id="ex1-tabs-2"
                 role="tabpanel"
                 aria-labelledby="ex1-tab-2"
@@ -155,7 +155,8 @@ const Sales = () => {
                   </tbody>
                 </table>
                 {/* sales return customer and invoice section ends here*/}
-
+                <div className=" sale_return_section">
+                  <div className="">
                 <table className="table w-100 table-bordered">
                   <thead>
                     <tr className="text-center">
@@ -195,9 +196,10 @@ const Sales = () => {
                     ))}
                   </tbody>
                 </table>
+                </div>
                 <h5>Return Sale</h5>
                 <div className="sales-return-section">
-                <table className="table table-bordered">
+                {/* <table className="table table-bordered">
                   <thead>
                     <tr>
                       <td>Customer Name:</td>
@@ -210,7 +212,7 @@ const Sales = () => {
                       </td>
                     </tr>
                   </thead>
-                  </table>
+                  </table> */}
                   <table className="table table-bordered">
                   <thead>
                     <tr>
@@ -238,6 +240,7 @@ const Sales = () => {
                     }
                   </tbody>
                   </table>
+                </div>
                 </div>
               </div>
             </div>

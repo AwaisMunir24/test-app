@@ -85,7 +85,7 @@ const Payments = () => {
                 </table>
               </div>
               <div className="col-lg-6 col-md-12">
-                <table className=" tablet-view">
+                <table className=" tablet-view1">
                   <thead>
                     <tr>
                       <td>Phone Number:</td>

@@ -73,7 +73,7 @@ const ClientForm = ({ updateClient }) => {
     <>
       <form onSubmit={onSubmitClientHandler}>
         <div className="row">
-          <div className="col-lg-6 col-md-6 col-sm-12">
+          <div className="col-lg-6 col-md-12 col-sm-12">
             <div className="client-info-box">
               <label className="form-label">Client Name</label>
               <Abs_Input
@@ -99,7 +99,7 @@ const ClientForm = ({ updateClient }) => {
               )}
             </div>
           </div>
-          <div className="col-lg-6 col-md-6 col-sm-12">
+          <div className="col-lg-6 col-md-12 col-sm-12">
             <div className="client-info-box3">
               <label className="form-label">Number</label>
               <Abs_Input

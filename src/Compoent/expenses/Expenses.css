@@ -48,3 +48,25 @@ table th{
     margin-bottom: 5px;
     font-size: 14px;
 }
+.exp_inp{
+    width: 50% !important;
+}
+.date_inp{
+    width: 75%;
+}
+
+
+
+
+@media screen and (max-width: 992px) {
+    .exp_inp{
+        width: 100% !important;
+    }
+    .expss_date {
+        width: 50%;
+        margin: auto;
+    }
+    .date_inp{
+        width: 50%;
+    }
+}

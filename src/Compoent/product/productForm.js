@@ -106,7 +106,7 @@ const ProductForm = ({ updateData }) => {
   return (
     <form onSubmit={onSubmitHandler}>
       <div className="row">
-        <div className="col-lg-6 col-md-6 col-sm-12">
+        <div className="col-lg-6 col-md-12 col-sm-12">
           <div className="product_Information_section">
             <label className="form-label">Product</label>
             <Abs_Input
@@ -158,7 +158,7 @@ const ProductForm = ({ updateData }) => {
             )}
           </div>
         </div>
-        <div className="col-lg-6 col-md-6 col-sm-12">
+        <div className="col-lg-6 col-md-12 col-sm-12">
           <div>
             <label className="form-label">Category:</label>
             <Abs_DropDown
@@ -193,7 +193,7 @@ const ProductForm = ({ updateData }) => {
               disabled={discountType == PERCENTAGE}
               min="1"
               type="text"
-              class="form-control"
+              className="form-control"
               value={discountType == PERCENTAGE ? "" : fixedValue}
               onChange={(e) => setFixedValue(e.target.value)}
             />

@@ -20,3 +20,12 @@
     top: 70px;
     left: 5px;
 }
+
+
+
+
+@media screen and (max-width: 992px) {
+    .addclient   .input-section {
+        padding-top: 12px;
+    }
+}

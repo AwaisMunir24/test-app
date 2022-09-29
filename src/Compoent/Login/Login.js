@@ -3,11 +3,16 @@ import "./Login.css";
 import lubioil from "../../Assestes/photos/lubioil.png";
 import logo from "../../Assestes/photos/lubi.jpg";
 import { useNavigate } from "react-router-dom";
+import { Act_Login } from "../../redux/BusinessLogics/Authentications";
+import { Rd_Login_Success } from "../../redux/reducers/UserAuth";
+import { useDispatch } from "react-redux"
 
 
 
 const Login = () => {
   const navigate=useNavigate();
+    const dispatch=useDispatch();
+
   // function adminList(){
   //   let items =JSON.parse (localStorage.getItem('admin'));
   //   if (items) {
@@ -38,16 +43,23 @@ const Login = () => {
 
 
   const _loginFunction=()=>{
-    localStorage.setItem('login',true);
-    navigate('/invoices');
+    Act_Login(()=>{
+     navigate('/invoices');
+    dispatch(
+      Rd_Login_Success())
+    });
+
+    // localStorage.setItem('login',true);
+    // navigate('/invoices');
     
   }
-  useEffect(()=>{
-    let login =localStorage.getItem('login');
-        if(login){
-            navigate('/invoices')
-        }
-    },[]);
+ 
+  // useEffect(()=>{
+  //   let login =localStorage.getItem('login');
+  //       if(login){
+  //           navigate('/invoices')
+  //       }
+  //   },[]);
 
   return (
     <>
@@ -63,7 +75,8 @@ const Login = () => {
                   <img src={logo} />
                   <h2>Lubricants</h2>
                 </div>
-                <form onSubmit={handleLoginPage}>
+                {/* <form onSubmit={handleLoginPage}> */}
+                <div>
                   <div className="form-outline mb-4">
                     <label className="form-label">Name</label>
                     <input
@@ -102,7 +115,8 @@ const Login = () => {
                   onClick={_loginFunction}>
                     Sign in
                   </button>
-                </form>
+                  </div>
+                {/* </form> */}
               </div>
             </div>
           </div>

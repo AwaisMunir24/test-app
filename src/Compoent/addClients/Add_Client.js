@@ -36,8 +36,8 @@ const AddClient = () => {
           </div>
 
           {/* <!-- Tabs navs --> */}
-          <ul class="nav nav-tabs mb-3" id="myTab0" role="tablist">
-            <li class="nav-item" role="presentation">
+          <ul className="nav nav-tabs mb-3" id="myTab0" role="tablist">
+            <li className="nav-item" role="presentation">
               <button
                 className="nav-link active"
                 id="home-tab0"
@@ -51,7 +51,7 @@ const AddClient = () => {
                 Add Clients
               </button>
             </li>
-            <li class="nav-item" role="presentation">
+            <li className="nav-item" role="presentation">
               <button
                 className="nav-link"
                 id="profile-tab0"
@@ -69,7 +69,7 @@ const AddClient = () => {
           {/* Tabs navs  */}
 
           {/* Tabs content  */}
-          <div class="tab-content" id="myTabContent0">
+          <div className="tab-content" id="myTabContent0">
             <div
               className="tab-pane fade show active"
               id="home0"
@@ -79,12 +79,12 @@ const AddClient = () => {
               <ClientForm updateClient={(data) => setUserData(data)} />
             </div>
             <div
-              class="tab-pane fade"
+              className="tab-pane fade"
               id="profile0"
               role="tabpanel"
               aria-labelledby="profile-tab0"
             >
-              <table class="table table-bordered">
+              <table className="table table-bordered">
                 <thead>
                   <tr>
                     <th scope="col">#</th>

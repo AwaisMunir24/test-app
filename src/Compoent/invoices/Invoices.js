@@ -138,7 +138,7 @@ const Invoices = () => {
                 </div>
               </div>
               <div className="col-lg-4">
-                <table class="table table-bordered">
+                <table className="table table-bordered">
                   <tbody>
                     <tr>
                       <td>Sales Invoice:</td>
@@ -249,7 +249,7 @@ const Invoices = () => {
               </div>
             </div>
             <div className="row align-items-end">
-              <div className="col-lg-8 col-md-8">
+              <div className="col-lg-7 col-md-6">
                 <div className="rupe-val">
                   <p>
                     <span>Rupees:</span>
@@ -257,7 +257,7 @@ const Invoices = () => {
                   </p>
                 </div>
               </div>
-              <div className="col-lg-4 col-md-4 ">
+              <div className="col-lg-5 col-md-6 ">
                 <table className=" ">
                   <tr>
                     <td>Total Value</td>

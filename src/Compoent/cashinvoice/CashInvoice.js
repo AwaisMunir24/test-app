@@ -79,7 +79,7 @@ const CashInvoices = () => {
               </div>
             </div>
             <div className="row">
-              <div className="col-lg-8 ">
+              <div className="col-lg-8 col-md-12 ">
                 <div className="">
                   <table className="table table-bordered ">
                     <thead>
@@ -110,8 +110,8 @@ const CashInvoices = () => {
                   </table>
                 </div>
               </div>
-              <div className="col-lg-4">
-                <table class="table table-bordered">
+              <div className="col-lg-4 col-md-12">
+                <table className="table table-bordered">
                   <tbody>
                     <tr>
                       <td>Cash Invoice:</td>
@@ -179,11 +179,11 @@ const CashInvoices = () => {
               </div>
             </div>
             <div className="row align-items-end">
-              <div className="col-lg-8 col-md-8">
+              <div className="col-lg-7 col-md-7">
               
               </div>
-              <div className="col-lg-4 col-md-4 ">
-                <table className=" ">
+              <div className="col-lg-5 col-md-5 ">
+                <table className=" tablet_view_table_cashinvoice">
                   <tr>
                     <td>Total Amount</td>
                     <td>

@@ -1,26 +1,32 @@
 import "./App.css";
 import MainFile from "./Compoent/MainFile/MainFile";
 import Header from "./Compoent/Header/Header";
-import Footer from "./Compoent/Footer/Footre";
+
 import SidebarMenu from "./Compoent/MenuSideBar/MenuSidebar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 function App() {
+  const isLoged = useSelector((state) => state.UserAuth.isLogedIn);
+  useEffect(() => {
+    console.log(isLoged, "login called");
+  }, [isLoged]);
 
-  let login =localStorage.getItem('login');
-  const [isLoged,setisLoged]=useState(login);
-  
   return (
     <>
+    <div className="Main_App"> 
       <Header />
       <div className="content">
-       
-        {/* {adminList().length >= 1 ? <SidebarMenu /> : ""} */}
         {isLoged ? <SidebarMenu /> : ""}
 
         <MainFile />
       </div>
-      {/* <Footer/> */}
+      </div>
+      <div className="error_msg_mobile">
+        <h2>
+          Resolution Not Supported
+        </h2>
+      </div>
     </>
   );
 }

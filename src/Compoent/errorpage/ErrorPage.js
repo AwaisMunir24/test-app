@@ -8,7 +8,7 @@ const ErrorPage = () => {
     <div className="container-fluid">
         <div className="row">
             <div className="col-lg-12">
-                <div className="404_section">
+                <div className="section_404">
                    <img src={error} alt="error" className="img-fluid"/>
                    <h4 className="heading_error">Page Not Found</h4>
                 </div>
