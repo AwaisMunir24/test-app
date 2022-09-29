@@ -32,16 +32,16 @@ const Header = () => {
 
   return (
     <>
-      {toogle ? (
-        <header className="header-section">
+     
+        {/* <header className="header-section">
           <div className="container-fluid">
             <div className="row align-items-center">
               <div className="col-lg-4 col-md-4">
                 <div className="d-flex align-items-center">
                   <div className="logo-view">
-                    {/* <Link to="homepage"> */}
+                  
                       <img src={logo} alt="logo" />
-                    {/* </Link> */}
+                   
                   </div>
                 </div>
               </div>
@@ -64,8 +64,8 @@ const Header = () => {
               </div>
             </div>
           </div>
-        </header>
-      ) : (
+        </header> */}
+     
         <header className="header-section">
           <div className="container-fluid">
             <div className="row align-items-center">
@@ -101,7 +101,7 @@ const Header = () => {
             </div>
           </div>
         </header>
-      )}
+      
     </>
   );
 };
