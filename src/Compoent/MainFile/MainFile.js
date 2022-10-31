@@ -30,25 +30,19 @@ const MainFile = () => {
   // const [admins, setAdmins] = useState(adminList());
 
   let navigate = useNavigate();
-  // const loginng = () => {
-  //   navigate("/");
 
-  //   console.log(admins, "apps");
-  // };
-  // useEffect(() => {
-  //   loginng();
-  // }, []);
+  
   return (
     <>
       <div className="context ">
         <Routes >
    
         {/* Public Pages starts here */}
-          <Route path="login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route path="homepage" element={<HomePage />} />
           <Route path="billing" element={<BillingSlip/>} />
           {/* Public Pages starts here */}
-          <Route path="invoices" element={< PrivateComp Component={Invoices} />} />
+          <Route path="invoices" element={<PrivateComp Component={Invoices} />} />
           <Route path="addproduct" element={<PrivateComp Component={AddProduct} />} />
           <Route path="addclient" element={<PrivateComp Component={AddClient} />} />
           <Route path="sales" element={<PrivateComp Component={Sales} />} />

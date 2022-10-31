@@ -80,7 +80,7 @@ const Quotation = () => {
             <div className="row">
               <div className="col-lg-8 ">
                 <div className="">
-                  <table className="table table-bordered ">
+                  <table className="table table-bordered table-sm">
                     <thead>
                       <tr>
                         <td>Customer Name: </td>
@@ -137,7 +137,7 @@ const Quotation = () => {
                 </div>
               </div>
               <div className="col-lg-4">
-                <table className="table table-bordered">
+                <table className="table table-bordered table-sm">
                   <tbody>
                     <tr>
                       <td>Sales Invoice:</td>
@@ -170,7 +170,7 @@ const Quotation = () => {
           <div className="container">
             <div className="row">
               <div className="col-lg-12 col-md-12 col-sm-12">
-                <table className="table w-100 text-center main-table">
+                <table className="table w-100 text-center main-table table-sm">
                   <thead>
                     <tr>
                       <th>#</th>

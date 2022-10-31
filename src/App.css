@@ -57,6 +57,8 @@ button#dropdownMenuButton {
 .first-pricelist-section .nav-tabs .nav-link {
     border: none !important;
     margin-bottom: 0 !important;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .productlisttable td,
@@ -81,7 +83,23 @@ button#dropdownMenuButton {
 .error_msg_mobile{
     display: none;
 }
-
+.nav-tabs .nav-link.active{
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 3px solid #467eb9!important;
+    font-weight: 500;
+    font-size: 20px;
+    color: #3684d8!important;
+    background-color: #fff0 !important;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    
+}
+.nav-tabs {
+    border-bottom: 1px solid #3684d8 !important;
+    color: #838c91!important;
+    font-size: 18px !important;
+}
 
 
 @media screen and (max-width: 768px) {

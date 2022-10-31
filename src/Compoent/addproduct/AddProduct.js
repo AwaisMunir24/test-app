@@ -135,7 +135,7 @@ const AddProduct = () => {
               role="tabpanel"
               aria-labelledby="ex1-tab-2"
             >
-              <table className="table table-bordered">
+              <table className="table table-bordered table-sm">
                 <thead>
                   <tr>
                     <th scope="col">#</th>

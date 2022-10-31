@@ -7,7 +7,7 @@ import { MenuData } from "../Header/MenuData";
 import "./MenuSideBar.css";
 
 const SidebarMenu = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   return (
     <>
       <div className="sidebar">
@@ -22,10 +22,11 @@ const SidebarMenu = () => {
         <ul className="navigation_list">
           {MenuData.map((value, index) => {
             return (
-              <li key={index}>
+              <li key={index} title={value.title}>
                       <NavLink to={value.path}>
                   {value.icon}
                   <span className={`${!open && "hidden"}`}>{value.name}</span>
+                  
               </NavLink>
                 </li>
             );

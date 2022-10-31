@@ -109,7 +109,7 @@ const Sales = () => {
                 role="tabpanel"
                 aria-labelledby="ex1-tab-1"
               >
-                <table className="table w-100 table-bordered">
+                <table className="table w-100 table-bordered table-sm">
                   <thead>
                     <tr className="text-center">
                       <th>#</th>
@@ -157,7 +157,7 @@ const Sales = () => {
                 {/* sales return customer and invoice section ends here*/}
                 <div className=" sale_return_section">
                   <div className="">
-                <table className="table w-100 table-bordered">
+                <table className="table w-100 table-bordered table-sm">
                   <thead>
                     <tr className="text-center">
                       <th>#</th>
@@ -213,7 +213,7 @@ const Sales = () => {
                     </tr>
                   </thead>
                   </table> */}
-                  <table className="table table-bordered">
+                  <table className="table table-bordered table-sm">
                   <thead>
                     <tr>
                       <th>#</th>

@@ -27,7 +27,7 @@ const Stock = () => {
             </div>
             <div className="row">
               <div className="col-lg-12 col-md-12">
-                <table className="table table-bordered ">
+                <table className="table table-bordered table-sm">
                   <thead>
                     <tr>
                       <th>Product Id</th>

@@ -8,3 +8,7 @@
 .pagination a.page-link {
     color: #212529 !important;
 }
+.pagination li.page-item {
+    background: white;
+    border-radius: 10px;
+}

@@ -63,10 +63,10 @@ const ExpenseForm = ({ updateExpense }) => {
                 changeFunc={(e) => setExpDate(e.target.value)}
                 type="date"
                 placeholder="Enter the Task Title "
-                classN="w-75 mb-2 date_inp "
+                classN="w-75 mb-2 date_inp  "
               />
               {message && !expDate && (
-                <p className="Data exp_Error_msg">Please Enter Date</p>
+                 <p className="Data exp_Error_msg">   Please Enter Date    <i className="far fa-hand-pointer"></i></p>
               )}
             </div>
           </div>

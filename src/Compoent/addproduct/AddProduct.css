@@ -4,7 +4,7 @@
 }
 
 .addproductsection {
-    background: #F7F7F7;
+    background: #E4EDF3;
 }
 
 .porduct-downdowns span {
@@ -54,6 +54,7 @@ button#dropdownMenuButton {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-left: 15px;
 }
 
 .dropdown-menu.show {

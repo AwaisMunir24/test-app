@@ -6,13 +6,15 @@ export const MenuData = [
       classname: "nav-link",
       icon:<i className="fa-solid fa-file-invoice"></i>,
       path: "/invoices",
+      title:"invoice"
     },
     {
       id:10,
       name:"Cash Invoices",
       className:"nav-link",
       icon:<i className="fa-solid fa-receipt"></i>,
-      path:"cash"
+      path:"cash",
+      title:"cash invoice"
     },
     {
       id: 2,
@@ -20,6 +22,7 @@ export const MenuData = [
       classname: "nav-link",
       icon:<i className="fa-brands fa-product-hunt"></i>,
       path: "addproduct",
+      title:"add product"
     },
     {
       id: 3,
@@ -27,6 +30,8 @@ export const MenuData = [
       classname: "nav-link",
      icon:<i className="fa-solid fa-user"></i>,
       path: "addclient",
+
+      title :"add client"
     },
     {
       id: 4,
@@ -34,6 +39,7 @@ export const MenuData = [
       classname: "nav-link",
       icon:<i className="fa-solid fa-hand-holding-dollar"></i>,
       path: "sales",
+      title:"sales"
     },
     {
       id: 5,
@@ -41,6 +47,7 @@ export const MenuData = [
       classname: "nav-link",
       icon:<i className="fa-solid fa-list-check"></i>,
       path: "tasks",
+      title:"tasks"
     },
     {
       id: 6,
@@ -48,6 +55,7 @@ export const MenuData = [
       classname: "nav-link",
       icon:<i className="fa-solid fa-building"></i>,
       path: "company",
+      title:"company"
     },
     // {
     //   id: 7,
@@ -62,6 +70,7 @@ export const MenuData = [
       classname: "nav-link",
       icon:<i className="fa-solid fa-quote-left"></i>,
       path: "quote",
+      title:"quote"
     },
     {
       id: 8,
@@ -69,6 +78,7 @@ export const MenuData = [
       classname: "nav-link",
       icon:<i className="fa-solid fa-money-bill"></i>,
       path: "pay",
+      title:"pay"
     },
     {
       id: 9,
@@ -76,20 +86,23 @@ export const MenuData = [
       classname: "nav-link",
       icon:<i className="fa-solid fa-scale-unbalanced-flip"></i>,
       path: "expense",
+      title:"expense"
     },
     {
       id:11,
       name:"Price List",
       className:"nav-link",
       icon:<i className="fa-solid fa-clipboard-list"></i>,
-      path:"picelist"
+      path:"picelist",
+      title:"price list"
     },
     {
       id:12,
       name:"Stock",
       className:"nav-link",
       icon:<i className="fa-solid fa-boxes-stacked"></i>,
-      path:"stock"
+      path:"stock",
+      title:"stock"
     },
     // {
     //   id:13,

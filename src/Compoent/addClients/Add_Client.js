@@ -84,7 +84,7 @@ const AddClient = () => {
               role="tabpanel"
               aria-labelledby="profile-tab0"
             >
-              <table className="table table-bordered">
+              <table className="table table-bordered table-sm">
                 <thead>
                   <tr>
                     <th scope="col">#</th>

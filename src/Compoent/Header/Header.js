@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../Assestes/photos/lubi.jpg";
 import { useDispatch, useSelector } from "react-redux";
 import "./Header.css";
@@ -33,38 +33,7 @@ const Header = () => {
   return (
     <>
      
-        {/* <header className="header-section">
-          <div className="container-fluid">
-            <div className="row align-items-center">
-              <div className="col-lg-4 col-md-4">
-                <div className="d-flex align-items-center">
-                  <div className="logo-view">
-                  
-                      <img src={logo} alt="logo" />
-                   
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-lg-8 col-md-8 text-end">
-                <ul>
-                  {
-                    isLoged? <li>
-                    <Link to="login" onClick={handleLoginEvent2}>
-                      {myUser.name} (logout)
-                    </Link>
-                  </li>: <li>
-                    <Link to="login" onClick={handleLoginEvent2}>
-                       (login)
-                    </Link>
-                  </li>
-                  }
-                
-               </ul>
-              </div>
-            </div>
-          </div>
-        </header> */}
+   
      
         <header className="header-section">
           <div className="container-fluid">
@@ -82,19 +51,17 @@ const Header = () => {
                 <ul>
                 {
                     isLoged? <li>
-                    <Link to="login" onClick={handleLoginEvent2}>
+                    <NavLink to="login" onClick={handleLoginEvent2}>
                       {myUser.name} (logout)
-                    </Link>
+                    </NavLink>
                   </li>: <li>
-                    <Link to="login" onClick={handleLoginEvent2}>
+                    <NavLink to="/" onClick={handleLoginEvent2}>
                     login
-                    </Link>
+                    </NavLink>
                   </li>
                   }
                   <li>
-                    {/* <Link to="login" onClick={handleLoginEvent}>
-                      Login
-                    </Link> */}
+                
                   </li>
                 </ul>
               </div>
