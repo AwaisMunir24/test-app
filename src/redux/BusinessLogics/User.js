@@ -13,4 +13,5 @@ class UserClass{
 }
 
 const MyUserClass= new UserClass();
-module.exports=MyUserClass;
+// module.exports =MyUserClass;
+export default MyUserClass
